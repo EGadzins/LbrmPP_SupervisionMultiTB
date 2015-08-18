@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabConf = new System.Windows.Forms.TabPage();
+            this.btnStartSup = new System.Windows.Forms.Button();
             this.buttonMajValTS = new System.Windows.Forms.Button();
             this.textBox_PathXML = new System.Windows.Forms.TextBox();
             this.label_PathXML = new System.Windows.Forms.Label();
@@ -210,7 +211,6 @@
             this.labelPUPEacb = new System.Windows.Forms.Label();
             this.labelPUPHard = new System.Windows.Forms.Label();
             this.tabGeneral = new System.Windows.Forms.TabPage();
-            this.btnStartSup = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabConf.SuspendLayout();
             this.tabSupTB.SuspendLayout();
@@ -257,6 +257,18 @@
             this.tabConf.Size = new System.Drawing.Size(1259, 791);
             this.tabConf.TabIndex = 0;
             this.tabConf.Text = "Configuration";
+            // 
+            // btnStartSup
+            // 
+            this.btnStartSup.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnStartSup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStartSup.Location = new System.Drawing.Point(65, 288);
+            this.btnStartSup.Name = "btnStartSup";
+            this.btnStartSup.Size = new System.Drawing.Size(542, 48);
+            this.btnStartSup.TabIndex = 88;
+            this.btnStartSup.Text = "Démarrage de la supervision";
+            this.btnStartSup.UseVisualStyleBackColor = false;
+            this.btnStartSup.Click += new System.EventHandler(this.btnStartSup_Click);
             // 
             // buttonMajValTS
             // 
@@ -526,6 +538,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(662, 17);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(579, 74);
@@ -890,6 +903,7 @@
             // 
             // richTextBoxVE2
             // 
+            this.richTextBoxVE2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVE2.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVE2.Name = "richTextBoxVE2";
             this.richTextBoxVE2.Size = new System.Drawing.Size(579, 74);
@@ -1120,6 +1134,7 @@
             // 
             // richTextBoxVI2
             // 
+            this.richTextBoxVI2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVI2.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVI2.Name = "richTextBoxVI2";
             this.richTextBoxVI2.Size = new System.Drawing.Size(579, 74);
@@ -1428,6 +1443,7 @@
             // 
             // richTextBoxVC2
             // 
+            this.richTextBoxVC2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVC2.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVC2.Name = "richTextBoxVC2";
             this.richTextBoxVC2.Size = new System.Drawing.Size(579, 74);
@@ -1736,6 +1752,7 @@
             // 
             // richTextBoxVC1
             // 
+            this.richTextBoxVC1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVC1.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVC1.Name = "richTextBoxVC1";
             this.richTextBoxVC1.Size = new System.Drawing.Size(579, 74);
@@ -1992,6 +2009,7 @@
             // 
             // richTextBoxVIU
             // 
+            this.richTextBoxVIU.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVIU.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVIU.Name = "richTextBoxVIU";
             this.richTextBoxVIU.Size = new System.Drawing.Size(579, 74);
@@ -2352,6 +2370,7 @@
             // 
             // richTextBoxVE1
             // 
+            this.richTextBoxVE1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVE1.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVE1.Name = "richTextBoxVE1";
             this.richTextBoxVE1.Size = new System.Drawing.Size(579, 74);
@@ -2375,6 +2394,7 @@
             // labelVE1Conn
             // 
             this.labelVE1Conn.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVE1Conn.ForeColor = System.Drawing.Color.White;
             this.labelVE1Conn.Location = new System.Drawing.Point(16, 23);
             this.labelVE1Conn.Name = "labelVE1Conn";
             this.labelVE1Conn.Size = new System.Drawing.Size(64, 23);
@@ -2423,6 +2443,7 @@
             // labelVE1Hard
             // 
             this.labelVE1Hard.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVE1Hard.ForeColor = System.Drawing.Color.White;
             this.labelVE1Hard.Location = new System.Drawing.Point(16, 46);
             this.labelVE1Hard.Name = "labelVE1Hard";
             this.labelVE1Hard.Size = new System.Drawing.Size(41, 23);
@@ -2452,11 +2473,13 @@
             // 
             // richTextBoxPUP
             // 
+            this.richTextBoxPUP.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxPUP.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxPUP.Name = "richTextBoxPUP";
             this.richTextBoxPUP.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxPUP.TabIndex = 48;
             this.richTextBoxPUP.Text = "";
+            this.richTextBoxPUP.TextChanged += new System.EventHandler(this.richTextBoxPUP_TextChanged);
             // 
             // buttonPUPReconn
             // 
@@ -2539,17 +2562,6 @@
             this.tabGeneral.Size = new System.Drawing.Size(1259, 791);
             this.tabGeneral.TabIndex = 1;
             this.tabGeneral.Text = "Debug";
-            // 
-            // btnStartSup
-            // 
-            this.btnStartSup.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.btnStartSup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartSup.Location = new System.Drawing.Point(65, 288);
-            this.btnStartSup.Name = "btnStartSup";
-            this.btnStartSup.Size = new System.Drawing.Size(542, 48);
-            this.btnStartSup.TabIndex = 88;
-            this.btnStartSup.Text = "Démarrage de la supervision";
-            this.btnStartSup.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
