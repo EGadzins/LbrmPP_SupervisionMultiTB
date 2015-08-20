@@ -31,28 +31,25 @@ namespace LbrmPP_SupervisionMultiTB
         }
         public TcpClient Connect()
         {
-            // kick off the thread that tries to connect
             connected = false;
             exception = null;
-            Thread thread = new Thread(new ThreadStart(BeginConnect));
-            thread.IsBackground = true; // So that a failed connection attempt 
-            // wont prevent the process from terminating while it does the long timeout
-            thread.Start();
 
-            // wait for either the timeout or the thread to finish
+            Thread thread = new Thread(new ThreadStart(BeginConnect));
+            thread.IsBackground = true;
+            thread.Start();
             thread.Join(_timeout_milliseconds);
 
             if (connected == true)
-            {
-                // it succeeded, so return the connection
-                thread.Abort();
-                return connection;
-            }
+                {
+                    thread.Abort();
+                    return connection;
+                }
             if (exception != null)
             {
                 // it crashed, so return the exception to the caller
                 thread.Abort();
-                throw exception;
+                return connection;
+                //throw exception;
             }
             else
             {
@@ -60,7 +57,8 @@ namespace LbrmPP_SupervisionMultiTB
                 thread.Abort();
                 string message = string.Format("TcpClient connection to {0}:{1} timed out",
                   _hostname, _port);
-                throw new TimeoutException(message);
+                //throw new TimeoutException(message);
+                return connection;
             }
         }
         protected void BeginConnect()

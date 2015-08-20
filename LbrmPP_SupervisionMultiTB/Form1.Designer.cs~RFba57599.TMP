@@ -57,7 +57,6 @@
             this.btnSUPReconn = new System.Windows.Forms.Button();
             this.labelSUPConn = new System.Windows.Forms.Label();
             this.groupBoxVE2 = new System.Windows.Forms.GroupBox();
-            this.labelVE2StartEqt = new System.Windows.Forms.Label();
             this.btnStartStopHVCP_E2 = new System.Windows.Forms.Button();
             this.label88 = new System.Windows.Forms.Label();
             this.btnStartStopDCU4_E2 = new System.Windows.Forms.Button();
@@ -90,7 +89,6 @@
             this.labelVE2Eacb = new System.Windows.Forms.Label();
             this.labelVE2Hard = new System.Windows.Forms.Label();
             this.groupBoxVI2 = new System.Windows.Forms.GroupBox();
-            this.labelVI2StartEqt = new System.Windows.Forms.Label();
             this.btnStartStopHVCP_I2 = new System.Windows.Forms.Button();
             this.label77 = new System.Windows.Forms.Label();
             this.btnStartStopDCU4_I2 = new System.Windows.Forms.Button();
@@ -109,7 +107,6 @@
             this.labelVI2Eacb = new System.Windows.Forms.Label();
             this.labelVI2Hard = new System.Windows.Forms.Label();
             this.groupBoxVC2 = new System.Windows.Forms.GroupBox();
-            this.labelVC2StartEqt = new System.Windows.Forms.Label();
             this.btnStartStopTOI_C2 = new System.Windows.Forms.Button();
             this.label61 = new System.Windows.Forms.Label();
             this.btnStartStopHVCP_C2 = new System.Windows.Forms.Button();
@@ -134,7 +131,6 @@
             this.labelVC2Eacb = new System.Windows.Forms.Label();
             this.labelVC2Hard = new System.Windows.Forms.Label();
             this.groupBoxVC1 = new System.Windows.Forms.GroupBox();
-            this.labelVC1StartEqt = new System.Windows.Forms.Label();
             this.btnStartStopTOI_C1 = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
             this.btnStartStopHVCP_C1 = new System.Windows.Forms.Button();
@@ -159,7 +155,6 @@
             this.labelVC1Eacb = new System.Windows.Forms.Label();
             this.labelVC1Hard = new System.Windows.Forms.Label();
             this.groupBoxVIU = new System.Windows.Forms.GroupBox();
-            this.labelVIUStartEqt = new System.Windows.Forms.Label();
             this.btnStartStopTOI_IU = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
             this.btnStartStopHVCP_IU = new System.Windows.Forms.Button();
@@ -180,7 +175,6 @@
             this.labelVIUEacb = new System.Windows.Forms.Label();
             this.labelVIUHard = new System.Windows.Forms.Label();
             this.groupBoxVE1 = new System.Windows.Forms.GroupBox();
-            this.labelVE1StartEqt = new System.Windows.Forms.Label();
             this.btnStartStopTOI_E1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnStartStopHVCP_E1 = new System.Windows.Forms.Button();
@@ -209,7 +203,6 @@
             this.labelVE1Eacb = new System.Windows.Forms.Label();
             this.labelVE1Hard = new System.Windows.Forms.Label();
             this.groupBoxPUP = new System.Windows.Forms.GroupBox();
-            this.labelPUPStartEqt = new System.Windows.Forms.Label();
             this.richTextBoxPUP = new System.Windows.Forms.RichTextBox();
             this.buttonPUPReconn = new System.Windows.Forms.Button();
             this.labelPUPConn = new System.Windows.Forms.Label();
@@ -403,7 +396,7 @@
             // 
             // tabSupTB
             // 
-            this.tabSupTB.BackColor = System.Drawing.Color.LightGray;
+            this.tabSupTB.BackColor = System.Drawing.Color.Gray;
             this.tabSupTB.Controls.Add(this.groupBoxSup);
             this.tabSupTB.Controls.Add(this.groupBoxVE2);
             this.tabSupTB.Controls.Add(this.groupBoxVI2);
@@ -421,7 +414,7 @@
             // 
             // groupBoxSup
             // 
-            this.groupBoxSup.BackColor = System.Drawing.Color.LightGray;
+            this.groupBoxSup.BackColor = System.Drawing.Color.Gray;
             this.groupBoxSup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBoxSup.Controls.Add(this.btnSUPTCPVue3DLV);
             this.groupBoxSup.Controls.Add(this.btnSUPTCPCB);
@@ -435,7 +428,7 @@
             this.groupBoxSup.Controls.Add(this.btnSUPReconn);
             this.groupBoxSup.Controls.Add(this.labelSUPConn);
             this.groupBoxSup.Font = new System.Drawing.Font("Alstom", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxSup.ForeColor = System.Drawing.Color.Black;
+            this.groupBoxSup.ForeColor = System.Drawing.Color.White;
             this.groupBoxSup.Location = new System.Drawing.Point(6, 3);
             this.groupBoxSup.Name = "groupBoxSup";
             this.groupBoxSup.Size = new System.Drawing.Size(1247, 97);
@@ -502,6 +495,7 @@
             // labelSUPCB4
             // 
             this.labelSUPCB4.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSUPCB4.ForeColor = System.Drawing.Color.White;
             this.labelSUPCB4.Location = new System.Drawing.Point(412, 68);
             this.labelSUPCB4.Name = "labelSUPCB4";
             this.labelSUPCB4.Size = new System.Drawing.Size(129, 23);
@@ -512,6 +506,7 @@
             // labelSUPCB3
             // 
             this.labelSUPCB3.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSUPCB3.ForeColor = System.Drawing.Color.White;
             this.labelSUPCB3.Location = new System.Drawing.Point(286, 68);
             this.labelSUPCB3.Name = "labelSUPCB3";
             this.labelSUPCB3.Size = new System.Drawing.Size(129, 23);
@@ -522,6 +517,7 @@
             // labelSUPCB2
             // 
             this.labelSUPCB2.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSUPCB2.ForeColor = System.Drawing.Color.White;
             this.labelSUPCB2.Location = new System.Drawing.Point(151, 68);
             this.labelSUPCB2.Name = "labelSUPCB2";
             this.labelSUPCB2.Size = new System.Drawing.Size(129, 23);
@@ -532,6 +528,7 @@
             // labelSUPCB1
             // 
             this.labelSUPCB1.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSUPCB1.ForeColor = System.Drawing.Color.White;
             this.labelSUPCB1.Location = new System.Drawing.Point(16, 68);
             this.labelSUPCB1.Name = "labelSUPCB1";
             this.labelSUPCB1.Size = new System.Drawing.Size(129, 23);
@@ -574,9 +571,8 @@
             // 
             // groupBoxVE2
             // 
-            this.groupBoxVE2.BackColor = System.Drawing.Color.LightGray;
+            this.groupBoxVE2.BackColor = System.Drawing.Color.Gray;
             this.groupBoxVE2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBoxVE2.Controls.Add(this.labelVE2StartEqt);
             this.groupBoxVE2.Controls.Add(this.btnStartStopHVCP_E2);
             this.groupBoxVE2.Controls.Add(this.label88);
             this.groupBoxVE2.Controls.Add(this.btnStartStopDCU4_E2);
@@ -609,23 +605,13 @@
             this.groupBoxVE2.Controls.Add(this.labelVE2Eacb);
             this.groupBoxVE2.Controls.Add(this.labelVE2Hard);
             this.groupBoxVE2.Font = new System.Drawing.Font("Alstom", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxVE2.ForeColor = System.Drawing.Color.Black;
+            this.groupBoxVE2.ForeColor = System.Drawing.Color.White;
             this.groupBoxVE2.Location = new System.Drawing.Point(6, 687);
             this.groupBoxVE2.Name = "groupBoxVE2";
             this.groupBoxVE2.Size = new System.Drawing.Size(1247, 97);
             this.groupBoxVE2.TabIndex = 45;
             this.groupBoxVE2.TabStop = false;
             this.groupBoxVE2.Text = "simulbr-VE2-2";
-            // 
-            // labelVE2StartEqt
-            // 
-            this.labelVE2StartEqt.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVE2StartEqt.Location = new System.Drawing.Point(16, 69);
-            this.labelVE2StartEqt.Name = "labelVE2StartEqt";
-            this.labelVE2StartEqt.Size = new System.Drawing.Size(64, 23);
-            this.labelVE2StartEqt.TabIndex = 90;
-            this.labelVE2StartEqt.Text = "StartEqt";
-            this.labelVE2StartEqt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnStartStopHVCP_E2
             // 
@@ -979,7 +965,7 @@
             // labelVE2Eacb
             // 
             this.labelVE2Eacb.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVE2Eacb.Location = new System.Drawing.Point(53, 46);
+            this.labelVE2Eacb.Location = new System.Drawing.Point(16, 69);
             this.labelVE2Eacb.Name = "labelVE2Eacb";
             this.labelVE2Eacb.Size = new System.Drawing.Size(41, 23);
             this.labelVE2Eacb.TabIndex = 42;
@@ -998,9 +984,8 @@
             // 
             // groupBoxVI2
             // 
-            this.groupBoxVI2.BackColor = System.Drawing.Color.LightGray;
+            this.groupBoxVI2.BackColor = System.Drawing.Color.Gray;
             this.groupBoxVI2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBoxVI2.Controls.Add(this.labelVI2StartEqt);
             this.groupBoxVI2.Controls.Add(this.btnStartStopHVCP_I2);
             this.groupBoxVI2.Controls.Add(this.label77);
             this.groupBoxVI2.Controls.Add(this.btnStartStopDCU4_I2);
@@ -1019,23 +1004,13 @@
             this.groupBoxVI2.Controls.Add(this.labelVI2Eacb);
             this.groupBoxVI2.Controls.Add(this.labelVI2Hard);
             this.groupBoxVI2.Font = new System.Drawing.Font("Alstom", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxVI2.ForeColor = System.Drawing.Color.Black;
+            this.groupBoxVI2.ForeColor = System.Drawing.Color.White;
             this.groupBoxVI2.Location = new System.Drawing.Point(6, 589);
             this.groupBoxVI2.Name = "groupBoxVI2";
             this.groupBoxVI2.Size = new System.Drawing.Size(1247, 97);
             this.groupBoxVI2.TabIndex = 44;
             this.groupBoxVI2.TabStop = false;
             this.groupBoxVI2.Text = "simulbr-VI2";
-            // 
-            // labelVI2StartEqt
-            // 
-            this.labelVI2StartEqt.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVI2StartEqt.Location = new System.Drawing.Point(16, 69);
-            this.labelVI2StartEqt.Name = "labelVI2StartEqt";
-            this.labelVI2StartEqt.Size = new System.Drawing.Size(64, 23);
-            this.labelVI2StartEqt.TabIndex = 89;
-            this.labelVI2StartEqt.Text = "StartEqt";
-            this.labelVI2StartEqt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnStartStopHVCP_I2
             // 
@@ -1221,7 +1196,7 @@
             // labelVI2Eacb
             // 
             this.labelVI2Eacb.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVI2Eacb.Location = new System.Drawing.Point(53, 46);
+            this.labelVI2Eacb.Location = new System.Drawing.Point(16, 69);
             this.labelVI2Eacb.Name = "labelVI2Eacb";
             this.labelVI2Eacb.Size = new System.Drawing.Size(41, 23);
             this.labelVI2Eacb.TabIndex = 42;
@@ -1240,9 +1215,8 @@
             // 
             // groupBoxVC2
             // 
-            this.groupBoxVC2.BackColor = System.Drawing.Color.LightGray;
+            this.groupBoxVC2.BackColor = System.Drawing.Color.Gray;
             this.groupBoxVC2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBoxVC2.Controls.Add(this.labelVC2StartEqt);
             this.groupBoxVC2.Controls.Add(this.btnStartStopTOI_C2);
             this.groupBoxVC2.Controls.Add(this.label61);
             this.groupBoxVC2.Controls.Add(this.btnStartStopHVCP_C2);
@@ -1267,23 +1241,13 @@
             this.groupBoxVC2.Controls.Add(this.labelVC2Eacb);
             this.groupBoxVC2.Controls.Add(this.labelVC2Hard);
             this.groupBoxVC2.Font = new System.Drawing.Font("Alstom", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxVC2.ForeColor = System.Drawing.Color.Black;
+            this.groupBoxVC2.ForeColor = System.Drawing.Color.White;
             this.groupBoxVC2.Location = new System.Drawing.Point(6, 491);
             this.groupBoxVC2.Name = "groupBoxVC2";
             this.groupBoxVC2.Size = new System.Drawing.Size(1247, 97);
             this.groupBoxVC2.TabIndex = 43;
             this.groupBoxVC2.TabStop = false;
             this.groupBoxVC2.Text = "simulbr-VC2";
-            // 
-            // labelVC2StartEqt
-            // 
-            this.labelVC2StartEqt.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVC2StartEqt.Location = new System.Drawing.Point(16, 69);
-            this.labelVC2StartEqt.Name = "labelVC2StartEqt";
-            this.labelVC2StartEqt.Size = new System.Drawing.Size(64, 23);
-            this.labelVC2StartEqt.TabIndex = 88;
-            this.labelVC2StartEqt.Text = "StartEqt";
-            this.labelVC2StartEqt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnStartStopTOI_C2
             // 
@@ -1541,7 +1505,7 @@
             // labelVC2Eacb
             // 
             this.labelVC2Eacb.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVC2Eacb.Location = new System.Drawing.Point(53, 46);
+            this.labelVC2Eacb.Location = new System.Drawing.Point(16, 69);
             this.labelVC2Eacb.Name = "labelVC2Eacb";
             this.labelVC2Eacb.Size = new System.Drawing.Size(41, 23);
             this.labelVC2Eacb.TabIndex = 42;
@@ -1560,9 +1524,8 @@
             // 
             // groupBoxVC1
             // 
-            this.groupBoxVC1.BackColor = System.Drawing.Color.LightGray;
+            this.groupBoxVC1.BackColor = System.Drawing.Color.Gray;
             this.groupBoxVC1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBoxVC1.Controls.Add(this.labelVC1StartEqt);
             this.groupBoxVC1.Controls.Add(this.btnStartStopTOI_C1);
             this.groupBoxVC1.Controls.Add(this.label46);
             this.groupBoxVC1.Controls.Add(this.btnStartStopHVCP_C1);
@@ -1587,23 +1550,13 @@
             this.groupBoxVC1.Controls.Add(this.labelVC1Eacb);
             this.groupBoxVC1.Controls.Add(this.labelVC1Hard);
             this.groupBoxVC1.Font = new System.Drawing.Font("Alstom", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxVC1.ForeColor = System.Drawing.Color.Black;
+            this.groupBoxVC1.ForeColor = System.Drawing.Color.White;
             this.groupBoxVC1.Location = new System.Drawing.Point(6, 393);
             this.groupBoxVC1.Name = "groupBoxVC1";
             this.groupBoxVC1.Size = new System.Drawing.Size(1247, 97);
             this.groupBoxVC1.TabIndex = 42;
             this.groupBoxVC1.TabStop = false;
             this.groupBoxVC1.Text = "simulbr-VC1";
-            // 
-            // labelVC1StartEqt
-            // 
-            this.labelVC1StartEqt.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVC1StartEqt.Location = new System.Drawing.Point(16, 69);
-            this.labelVC1StartEqt.Name = "labelVC1StartEqt";
-            this.labelVC1StartEqt.Size = new System.Drawing.Size(64, 23);
-            this.labelVC1StartEqt.TabIndex = 87;
-            this.labelVC1StartEqt.Text = "StartEqt";
-            this.labelVC1StartEqt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnStartStopTOI_C1
             // 
@@ -1861,7 +1814,7 @@
             // labelVC1Eacb
             // 
             this.labelVC1Eacb.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVC1Eacb.Location = new System.Drawing.Point(53, 46);
+            this.labelVC1Eacb.Location = new System.Drawing.Point(16, 69);
             this.labelVC1Eacb.Name = "labelVC1Eacb";
             this.labelVC1Eacb.Size = new System.Drawing.Size(41, 23);
             this.labelVC1Eacb.TabIndex = 42;
@@ -1880,9 +1833,8 @@
             // 
             // groupBoxVIU
             // 
-            this.groupBoxVIU.BackColor = System.Drawing.Color.LightGray;
+            this.groupBoxVIU.BackColor = System.Drawing.Color.Gray;
             this.groupBoxVIU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBoxVIU.Controls.Add(this.labelVIUStartEqt);
             this.groupBoxVIU.Controls.Add(this.btnStartStopTOI_IU);
             this.groupBoxVIU.Controls.Add(this.label31);
             this.groupBoxVIU.Controls.Add(this.btnStartStopHVCP_IU);
@@ -1903,23 +1855,13 @@
             this.groupBoxVIU.Controls.Add(this.labelVIUEacb);
             this.groupBoxVIU.Controls.Add(this.labelVIUHard);
             this.groupBoxVIU.Font = new System.Drawing.Font("Alstom", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxVIU.ForeColor = System.Drawing.Color.Black;
+            this.groupBoxVIU.ForeColor = System.Drawing.Color.White;
             this.groupBoxVIU.Location = new System.Drawing.Point(6, 295);
             this.groupBoxVIU.Name = "groupBoxVIU";
             this.groupBoxVIU.Size = new System.Drawing.Size(1247, 97);
             this.groupBoxVIU.TabIndex = 41;
             this.groupBoxVIU.TabStop = false;
             this.groupBoxVIU.Text = "simulbr-VIU";
-            // 
-            // labelVIUStartEqt
-            // 
-            this.labelVIUStartEqt.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVIUStartEqt.Location = new System.Drawing.Point(16, 69);
-            this.labelVIUStartEqt.Name = "labelVIUStartEqt";
-            this.labelVIUStartEqt.Size = new System.Drawing.Size(64, 23);
-            this.labelVIUStartEqt.TabIndex = 86;
-            this.labelVIUStartEqt.Text = "StartEqt";
-            this.labelVIUStartEqt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnStartStopTOI_IU
             // 
@@ -2129,7 +2071,7 @@
             // labelVIUEacb
             // 
             this.labelVIUEacb.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVIUEacb.Location = new System.Drawing.Point(53, 46);
+            this.labelVIUEacb.Location = new System.Drawing.Point(16, 69);
             this.labelVIUEacb.Name = "labelVIUEacb";
             this.labelVIUEacb.Size = new System.Drawing.Size(41, 23);
             this.labelVIUEacb.TabIndex = 42;
@@ -2148,9 +2090,8 @@
             // 
             // groupBoxVE1
             // 
-            this.groupBoxVE1.BackColor = System.Drawing.Color.LightGray;
+            this.groupBoxVE1.BackColor = System.Drawing.Color.Gray;
             this.groupBoxVE1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBoxVE1.Controls.Add(this.labelVE1StartEqt);
             this.groupBoxVE1.Controls.Add(this.btnStartStopTOI_E1);
             this.groupBoxVE1.Controls.Add(this.label1);
             this.groupBoxVE1.Controls.Add(this.btnStartStopHVCP_E1);
@@ -2179,23 +2120,13 @@
             this.groupBoxVE1.Controls.Add(this.labelVE1Eacb);
             this.groupBoxVE1.Controls.Add(this.labelVE1Hard);
             this.groupBoxVE1.Font = new System.Drawing.Font("Alstom", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxVE1.ForeColor = System.Drawing.Color.Black;
+            this.groupBoxVE1.ForeColor = System.Drawing.Color.White;
             this.groupBoxVE1.Location = new System.Drawing.Point(6, 197);
             this.groupBoxVE1.Name = "groupBoxVE1";
             this.groupBoxVE1.Size = new System.Drawing.Size(1247, 97);
             this.groupBoxVE1.TabIndex = 40;
             this.groupBoxVE1.TabStop = false;
             this.groupBoxVE1.Text = "simulbr-VE1-3";
-            // 
-            // labelVE1StartEqt
-            // 
-            this.labelVE1StartEqt.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVE1StartEqt.Location = new System.Drawing.Point(16, 69);
-            this.labelVE1StartEqt.Name = "labelVE1StartEqt";
-            this.labelVE1StartEqt.Size = new System.Drawing.Size(64, 23);
-            this.labelVE1StartEqt.TabIndex = 85;
-            this.labelVE1StartEqt.Text = "StartEqt";
-            this.labelVE1StartEqt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnStartStopTOI_E1
             // 
@@ -2463,6 +2394,7 @@
             // labelVE1Conn
             // 
             this.labelVE1Conn.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVE1Conn.ForeColor = System.Drawing.Color.White;
             this.labelVE1Conn.Location = new System.Drawing.Point(16, 23);
             this.labelVE1Conn.Name = "labelVE1Conn";
             this.labelVE1Conn.Size = new System.Drawing.Size(64, 23);
@@ -2501,7 +2433,7 @@
             // labelVE1Eacb
             // 
             this.labelVE1Eacb.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelVE1Eacb.Location = new System.Drawing.Point(53, 46);
+            this.labelVE1Eacb.Location = new System.Drawing.Point(16, 69);
             this.labelVE1Eacb.Name = "labelVE1Eacb";
             this.labelVE1Eacb.Size = new System.Drawing.Size(41, 23);
             this.labelVE1Eacb.TabIndex = 42;
@@ -2511,6 +2443,7 @@
             // labelVE1Hard
             // 
             this.labelVE1Hard.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVE1Hard.ForeColor = System.Drawing.Color.White;
             this.labelVE1Hard.Location = new System.Drawing.Point(16, 46);
             this.labelVE1Hard.Name = "labelVE1Hard";
             this.labelVE1Hard.Size = new System.Drawing.Size(41, 23);
@@ -2520,9 +2453,8 @@
             // 
             // groupBoxPUP
             // 
-            this.groupBoxPUP.BackColor = System.Drawing.Color.LightGray;
+            this.groupBoxPUP.BackColor = System.Drawing.Color.Gray;
             this.groupBoxPUP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBoxPUP.Controls.Add(this.labelPUPStartEqt);
             this.groupBoxPUP.Controls.Add(this.richTextBoxPUP);
             this.groupBoxPUP.Controls.Add(this.buttonPUPReconn);
             this.groupBoxPUP.Controls.Add(this.labelPUPConn);
@@ -2532,7 +2464,7 @@
             this.groupBoxPUP.Controls.Add(this.labelPUPHard);
             this.groupBoxPUP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBoxPUP.Font = new System.Drawing.Font("Alstom", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxPUP.ForeColor = System.Drawing.Color.Black;
+            this.groupBoxPUP.ForeColor = System.Drawing.Color.White;
             this.groupBoxPUP.Location = new System.Drawing.Point(6, 99);
             this.groupBoxPUP.Name = "groupBoxPUP";
             this.groupBoxPUP.Size = new System.Drawing.Size(1247, 97);
@@ -2540,20 +2472,9 @@
             this.groupBoxPUP.TabStop = false;
             this.groupBoxPUP.Text = "simulbr-PUP1";
             // 
-            // labelPUPStartEqt
-            // 
-            this.labelPUPStartEqt.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPUPStartEqt.Location = new System.Drawing.Point(16, 69);
-            this.labelPUPStartEqt.Name = "labelPUPStartEqt";
-            this.labelPUPStartEqt.Size = new System.Drawing.Size(64, 23);
-            this.labelPUPStartEqt.TabIndex = 49;
-            this.labelPUPStartEqt.Text = "StartEqt";
-            this.labelPUPStartEqt.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // richTextBoxPUP
             // 
             this.richTextBoxPUP.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxPUP.ForeColor = System.Drawing.Color.Black;
             this.richTextBoxPUP.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxPUP.Name = "richTextBoxPUP";
             this.richTextBoxPUP.Size = new System.Drawing.Size(579, 74);
@@ -2612,14 +2533,13 @@
             this.buttonPUPReload.TabIndex = 43;
             this.buttonPUPReload.Text = "Reload XML";
             this.buttonPUPReload.UseVisualStyleBackColor = false;
-            this.buttonPUPReload.Click += new System.EventHandler(this.buttonPUPReload_Click);
             // 
             // labelPUPEacb
             // 
             this.labelPUPEacb.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPUPEacb.Location = new System.Drawing.Point(53, 46);
+            this.labelPUPEacb.Location = new System.Drawing.Point(16, 69);
             this.labelPUPEacb.Name = "labelPUPEacb";
-            this.labelPUPEacb.Size = new System.Drawing.Size(39, 23);
+            this.labelPUPEacb.Size = new System.Drawing.Size(41, 23);
             this.labelPUPEacb.TabIndex = 42;
             this.labelPUPEacb.Text = "EACB";
             this.labelPUPEacb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2629,7 +2549,7 @@
             this.labelPUPHard.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPUPHard.Location = new System.Drawing.Point(16, 46);
             this.labelPUPHard.Name = "labelPUPHard";
-            this.labelPUPHard.Size = new System.Drawing.Size(39, 23);
+            this.labelPUPHard.Size = new System.Drawing.Size(41, 23);
             this.labelPUPHard.TabIndex = 42;
             this.labelPUPHard.Text = "HARD";
             this.labelPUPHard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2654,7 +2574,6 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Laborame Supervision Multi TB 3.0.0";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabConf.ResumeLayout(false);
             this.tabConf.PerformLayout();
@@ -2856,13 +2775,6 @@
         private System.Windows.Forms.Button btnSUPTCPBiStd;
         private System.Windows.Forms.Button btnSUPStartSim;
         private System.Windows.Forms.Button btnStartSup;
-        private System.Windows.Forms.Label labelVE2StartEqt;
-        private System.Windows.Forms.Label labelVI2StartEqt;
-        private System.Windows.Forms.Label labelVC2StartEqt;
-        private System.Windows.Forms.Label labelVC1StartEqt;
-        private System.Windows.Forms.Label labelVIUStartEqt;
-        private System.Windows.Forms.Label labelVE1StartEqt;
-        private System.Windows.Forms.Label labelPUPStartEqt;
     }
 }
 

@@ -1,0 +1,184 @@
+﻿using System;
+using System.Threading;
+using System.Net.Sockets;
+using System.Globalization;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace LbrmPP_SupervisionMultiTB
+{
+    
+   public partial class Form1 : Form
+    {
+
+       private BackgroundWorker bgWorkerCB;
+       private BackgroundWorker bgWorkerTCP_PUP;
+        
+       public Form1()
+        {
+            InitializeComponent();
+
+            bgWorkerCB = new BackgroundWorker();
+            bgWorkerCB.WorkerReportsProgress = true;
+            bgWorkerCB.DoWork += bgWorkerCB_Process;
+            bgWorkerCB.ProgressChanged += bgWorkerCB_ProgressChanged;
+            bgWorkerCB.RunWorkerCompleted += bgWorkerCB_RunWorkerCompleted;
+
+            bgWorkerTCP_PUP = new BackgroundWorker();
+            bgWorkerTCP_PUP.WorkerReportsProgress = true;
+            bgWorkerTCP_PUP.DoWork += bgWorkerTCP_PUP_Process;
+            bgWorkerTCP_PUP.ProgressChanged += bgWorkerTCP_PUP_ProgressChanged;
+            bgWorkerTCP_PUP.RunWorkerCompleted += bgWorkerTCP_PUP_RunWorkerCompleted;
+        }
+
+        private void btnStartSup_Click(object sender, EventArgs e)
+        {
+            btnStartSup.Enabled = false;
+            tabControl1.SelectedTab = tabSupTB;
+            
+            bgWorkerTCP_PUP.RunWorkerAsync();
+        }
+
+        public void Update_RichTextBox(bool SndRcv, string RichTextBox, string Msg)
+        {
+            CultureInfo culture = new CultureInfo("en-gb");
+            string timeStamp = DateTime.Now.ToString("G", culture);
+            Invoke(new Action(() =>
+            {
+                richTextBoxPUP.AppendText(">" + timeStamp + Msg + "\n");
+                richTextBoxPUP.SelectionStart = richTextBoxPUP.Text.Length;
+                richTextBoxPUP.ScrollToCaret();
+            }
+            ));
+        }
+
+        #region bgWorkerCB
+        /// <summary>
+        /// Thread pour l'interface CB
+        /// </summary>
+
+        private void bgWorkerCB_Process(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker bgWorker = (BackgroundWorker)sender;
+            for (var i = 0; i < 100; i++)
+            {
+                bgWorker.ReportProgress(i);
+                Thread.Sleep(100);
+            }
+        }
+
+        private void bgWorkerCB_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            //if (e.ProgressPercentage >= 20) labelSUPCB1.ForeColor = System.Drawing.Color.Green;
+            //if (e.ProgressPercentage >= 40) labelSUPCB2.ForeColor = System.Drawing.Color.Green;
+            //if (e.ProgressPercentage >= 60) labelSUPCB3.ForeColor = System.Drawing.Color.Green;
+            //if (e.ProgressPercentage >= 80) labelSUPCB4.ForeColor = System.Drawing.Color.Green;
+        }
+
+        void bgWorkerCB_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            //btnStartSup.Enabled = true;
+        }
+        #endregion
+
+        #region bgWorkerTCP_PUP
+        /// <summary>
+        /// Thread pour l'interface TCP avec le PC PUP
+        /// </summary>
+
+        private void bgWorkerTCP_PUP_Process(object sender, DoWorkEventArgs e)
+        {
+            int ReportProgress = 0;
+            string strRcv = null;
+            BackgroundWorker bgWorker = (BackgroundWorker)sender;
+
+            //TcpClient connection = new TcpClientWithTimeout("10.23.154.58", 5555, 5000).Connect();  // 5s de timetout
+            ClassTCP TCPPUP = new ClassTCP("10.23.154.58", "PUP", bgWorker, this);
+
+            Invoke(new Action(() => { labelPUPConn.ForeColor = System.Drawing.Color.LawnGreen; }));
+
+            TCPPUP.InitRP();
+            TCPPUP.LoadXMLandStart();
+
+            while (TCPPUP.Action<99)
+            {
+                //1 = ReConnexion
+                //2 = Reload XML
+                //3 = 
+                //99 = Stop
+                switch (TCPPUP.Action)
+                {
+                    case 1: //1 = ReConnexion
+                        Invoke(new Action(() => { labelPUPConn.ForeColor = System.Drawing.Color.LawnGreen; }));
+                        break;
+                }
+            
+            }     
+
+            Thread.Sleep(3000);
+            strRcv = TCPPUP.Send("KZ"); // Reset Conf
+            strRcv = TCPPUP.Send("Ks"); //Stop
+            strRcv = TCPPUP.Send("LE"); //List Equipements
+
+            // Disconnect
+            TCPPUP.Close();
+        }
+
+        private void bgWorkerTCP_PUP_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            //Status :
+            //2 = End of Init
+            //3 = End of HARD.xml
+            //4 = End of EACB.xml
+            //5 = End of StartEqt
+            
+            switch (e.ProgressPercentage)
+            {
+                case 1:
+                    Invoke(new Action(() => { labelPUPConn.ForeColor = System.Drawing.Color.LawnGreen; }));
+                    break;
+                case -1:
+                    Invoke(new Action(() => { labelPUPConn.ForeColor = System.Drawing.Color.DarkRed; }));
+                    break;
+                case 2 :
+                    break;
+                case 3:
+                    Invoke(new Action(() => { labelPUPHard.ForeColor = System.Drawing.Color.LawnGreen; }));
+                    break;
+                case -3:
+                    Invoke(new Action(() => { labelPUPHard.ForeColor = System.Drawing.Color.DarkRed; }));
+                    break;
+                case 4:
+                    Invoke(new Action(() => { labelPUPEacb.ForeColor = System.Drawing.Color.LawnGreen; }));
+                    break;
+                case -4:
+                    Invoke(new Action(() => { labelPUPEacb.ForeColor = System.Drawing.Color.DarkRed; }));
+                    break;
+                case 5:
+                    Invoke(new Action(() => { buttonPUPReload.Enabled  = true;}));
+                    break;
+                default:
+                    break;
+            }
+            //if (e.ProgressPercentage >= 20) labelSUPCB1.ForeColor = System.Drawing.Color.Green;
+        }
+
+        void bgWorkerTCP_PUP_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            //btnStartSup.Enabled = true;
+        }
+        #endregion
+
+        private void richTextBoxPUP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+    }
+}
