@@ -53,9 +53,8 @@
             this.labelSUPCB3 = new System.Windows.Forms.Label();
             this.labelSUPCB2 = new System.Windows.Forms.Label();
             this.labelSUPCB1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.btnSUPReconn = new System.Windows.Forms.Button();
-            this.labelSUPConn = new System.Windows.Forms.Label();
+            this.richTextBoxSUP = new System.Windows.Forms.RichTextBox();
+            this.btnSUPReInit = new System.Windows.Forms.Button();
             this.groupBoxVE2 = new System.Windows.Forms.GroupBox();
             this.labelVE2StartEqt = new System.Windows.Forms.Label();
             this.btnStartStopHVCP_E2 = new System.Windows.Forms.Button();
@@ -218,6 +217,14 @@
             this.labelPUPEacb = new System.Windows.Forms.Label();
             this.labelPUPHard = new System.Windows.Forms.Label();
             this.tabGeneral = new System.Windows.Forms.TabPage();
+            this.labelSUPCB0 = new System.Windows.Forms.Label();
+            this.labelgroupBoxPUP = new System.Windows.Forms.Label();
+            this.labelgroupBoxVE1 = new System.Windows.Forms.Label();
+            this.labelgroupBoxVIU = new System.Windows.Forms.Label();
+            this.labelgroupBoxVC1 = new System.Windows.Forms.Label();
+            this.labelgroupBoxVC2 = new System.Windows.Forms.Label();
+            this.labelgroupBoxVI2 = new System.Windows.Forms.Label();
+            this.labelgroupBoxVE2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabConf.SuspendLayout();
             this.tabSupTB.SuspendLayout();
@@ -238,6 +245,7 @@
             this.tabControl1.Controls.Add(this.tabGeneral);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
+            this.tabControl1.Padding = new System.Drawing.Point(50, 6);
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1267, 817);
             this.tabControl1.TabIndex = 0;
@@ -258,22 +266,22 @@
             this.tabConf.Controls.Add(this.label_CBApplicationName);
             this.tabConf.Controls.Add(this.label__CBProjectName);
             this.tabConf.Controls.Add(this.label_PathCB);
-            this.tabConf.Location = new System.Drawing.Point(4, 22);
+            this.tabConf.Location = new System.Drawing.Point(4, 28);
             this.tabConf.Name = "tabConf";
             this.tabConf.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConf.Size = new System.Drawing.Size(1259, 791);
+            this.tabConf.Size = new System.Drawing.Size(1259, 785);
             this.tabConf.TabIndex = 0;
-            this.tabConf.Text = "Configuration";
+            this.tabConf.Text = "     Configuration     ";
             // 
             // btnStartSup
             // 
             this.btnStartSup.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnStartSup.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartSup.Location = new System.Drawing.Point(65, 288);
+            this.btnStartSup.Location = new System.Drawing.Point(360, 327);
             this.btnStartSup.Name = "btnStartSup";
             this.btnStartSup.Size = new System.Drawing.Size(542, 48);
             this.btnStartSup.TabIndex = 88;
-            this.btnStartSup.Text = "Démarrage de la supervision";
+            this.btnStartSup.Text = "Démarrer de la supervision";
             this.btnStartSup.UseVisualStyleBackColor = false;
             this.btnStartSup.Click += new System.EventHandler(this.btnStartSup_Click);
             // 
@@ -281,19 +289,20 @@
             // 
             this.buttonMajValTS.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.buttonMajValTS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMajValTS.Location = new System.Drawing.Point(65, 222);
+            this.buttonMajValTS.Location = new System.Drawing.Point(360, 261);
             this.buttonMajValTS.Name = "buttonMajValTS";
             this.buttonMajValTS.Size = new System.Drawing.Size(542, 48);
             this.buttonMajValTS.TabIndex = 87;
-            this.buttonMajValTS.Text = "Sauvegarder les valeurs et mettre à jour TestStand";
+            this.buttonMajValTS.Text = "Sauvegarder les valeurs";
             this.buttonMajValTS.UseVisualStyleBackColor = false;
+            this.buttonMajValTS.Click += new System.EventHandler(this.buttonMajValTS_Click);
             // 
             // textBox_PathXML
             // 
             this.textBox_PathXML.BackColor = System.Drawing.SystemColors.Window;
             this.textBox_PathXML.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PathXML.ForeColor = System.Drawing.Color.Red;
-            this.textBox_PathXML.Location = new System.Drawing.Point(194, 157);
+            this.textBox_PathXML.Location = new System.Drawing.Point(489, 196);
             this.textBox_PathXML.Name = "textBox_PathXML";
             this.textBox_PathXML.Size = new System.Drawing.Size(413, 20);
             this.textBox_PathXML.TabIndex = 86;
@@ -301,7 +310,7 @@
             // label_PathXML
             // 
             this.label_PathXML.ForeColor = System.Drawing.SystemColors.Window;
-            this.label_PathXML.Location = new System.Drawing.Point(6, 160);
+            this.label_PathXML.Location = new System.Drawing.Point(301, 199);
             this.label_PathXML.Name = "label_PathXML";
             this.label_PathXML.Size = new System.Drawing.Size(185, 16);
             this.label_PathXML.TabIndex = 85;
@@ -320,10 +329,10 @@
             this.checkBoxCB.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.checkBoxCB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBoxCB.Font = new System.Drawing.Font("Alstom", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxCB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(204)))), ((int)(((byte)(254)))));
+            this.checkBoxCB.ForeColor = System.Drawing.Color.Yellow;
             this.checkBoxCB.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.checkBoxCB.ImageIndex = 1;
-            this.checkBoxCB.Location = new System.Drawing.Point(82, 114);
+            this.checkBoxCB.Location = new System.Drawing.Point(377, 153);
             this.checkBoxCB.Name = "checkBoxCB";
             this.checkBoxCB.Size = new System.Drawing.Size(274, 24);
             this.checkBoxCB.TabIndex = 84;
@@ -333,21 +342,21 @@
             // 
             // textBox_CBTaskName
             // 
-            this.textBox_CBTaskName.Location = new System.Drawing.Point(193, 88);
+            this.textBox_CBTaskName.Location = new System.Drawing.Point(488, 127);
             this.textBox_CBTaskName.Name = "textBox_CBTaskName";
             this.textBox_CBTaskName.Size = new System.Drawing.Size(414, 20);
             this.textBox_CBTaskName.TabIndex = 78;
             // 
             // textBox_CBApplicationName
             // 
-            this.textBox_CBApplicationName.Location = new System.Drawing.Point(193, 62);
+            this.textBox_CBApplicationName.Location = new System.Drawing.Point(488, 101);
             this.textBox_CBApplicationName.Name = "textBox_CBApplicationName";
             this.textBox_CBApplicationName.Size = new System.Drawing.Size(414, 20);
             this.textBox_CBApplicationName.TabIndex = 76;
             // 
             // textBox_CBProjectName
             // 
-            this.textBox_CBProjectName.Location = new System.Drawing.Point(193, 36);
+            this.textBox_CBProjectName.Location = new System.Drawing.Point(488, 75);
             this.textBox_CBProjectName.Name = "textBox_CBProjectName";
             this.textBox_CBProjectName.Size = new System.Drawing.Size(414, 20);
             this.textBox_CBProjectName.TabIndex = 74;
@@ -356,7 +365,7 @@
             // 
             this.textBox_PathCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PathCB.ForeColor = System.Drawing.Color.Red;
-            this.textBox_PathCB.Location = new System.Drawing.Point(193, 10);
+            this.textBox_PathCB.Location = new System.Drawing.Point(488, 49);
             this.textBox_PathCB.Name = "textBox_PathCB";
             this.textBox_PathCB.Size = new System.Drawing.Size(414, 20);
             this.textBox_PathCB.TabIndex = 72;
@@ -364,7 +373,7 @@
             // label_CBTaskName
             // 
             this.label_CBTaskName.ForeColor = System.Drawing.SystemColors.Window;
-            this.label_CBTaskName.Location = new System.Drawing.Point(5, 91);
+            this.label_CBTaskName.Location = new System.Drawing.Point(300, 130);
             this.label_CBTaskName.Name = "label_CBTaskName";
             this.label_CBTaskName.Size = new System.Drawing.Size(185, 16);
             this.label_CBTaskName.TabIndex = 77;
@@ -374,7 +383,7 @@
             // label_CBApplicationName
             // 
             this.label_CBApplicationName.ForeColor = System.Drawing.SystemColors.Window;
-            this.label_CBApplicationName.Location = new System.Drawing.Point(5, 65);
+            this.label_CBApplicationName.Location = new System.Drawing.Point(300, 104);
             this.label_CBApplicationName.Name = "label_CBApplicationName";
             this.label_CBApplicationName.Size = new System.Drawing.Size(185, 16);
             this.label_CBApplicationName.TabIndex = 75;
@@ -384,7 +393,7 @@
             // label__CBProjectName
             // 
             this.label__CBProjectName.ForeColor = System.Drawing.SystemColors.Window;
-            this.label__CBProjectName.Location = new System.Drawing.Point(6, 39);
+            this.label__CBProjectName.Location = new System.Drawing.Point(301, 78);
             this.label__CBProjectName.Name = "label__CBProjectName";
             this.label__CBProjectName.Size = new System.Drawing.Size(185, 16);
             this.label__CBProjectName.TabIndex = 73;
@@ -394,7 +403,7 @@
             // label_PathCB
             // 
             this.label_PathCB.ForeColor = System.Drawing.SystemColors.Window;
-            this.label_PathCB.Location = new System.Drawing.Point(6, 13);
+            this.label_PathCB.Location = new System.Drawing.Point(301, 52);
             this.label_PathCB.Name = "label_PathCB";
             this.label_PathCB.Size = new System.Drawing.Size(185, 17);
             this.label_PathCB.TabIndex = 71;
@@ -412,17 +421,18 @@
             this.tabSupTB.Controls.Add(this.groupBoxVIU);
             this.tabSupTB.Controls.Add(this.groupBoxVE1);
             this.tabSupTB.Controls.Add(this.groupBoxPUP);
-            this.tabSupTB.Location = new System.Drawing.Point(4, 22);
+            this.tabSupTB.Location = new System.Drawing.Point(4, 28);
             this.tabSupTB.Name = "tabSupTB";
             this.tabSupTB.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSupTB.Size = new System.Drawing.Size(1259, 791);
+            this.tabSupTB.Size = new System.Drawing.Size(1259, 785);
             this.tabSupTB.TabIndex = 2;
-            this.tabSupTB.Text = "Supervision";
+            this.tabSupTB.Text = "     Supervision     ";
             // 
             // groupBoxSup
             // 
             this.groupBoxSup.BackColor = System.Drawing.Color.LightGray;
             this.groupBoxSup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBoxSup.Controls.Add(this.labelSUPCB0);
             this.groupBoxSup.Controls.Add(this.btnSUPTCPVue3DLV);
             this.groupBoxSup.Controls.Add(this.btnSUPTCPCB);
             this.groupBoxSup.Controls.Add(this.btnSUPTCPBiStd);
@@ -431,9 +441,8 @@
             this.groupBoxSup.Controls.Add(this.labelSUPCB3);
             this.groupBoxSup.Controls.Add(this.labelSUPCB2);
             this.groupBoxSup.Controls.Add(this.labelSUPCB1);
-            this.groupBoxSup.Controls.Add(this.richTextBox1);
-            this.groupBoxSup.Controls.Add(this.btnSUPReconn);
-            this.groupBoxSup.Controls.Add(this.labelSUPConn);
+            this.groupBoxSup.Controls.Add(this.richTextBoxSUP);
+            this.groupBoxSup.Controls.Add(this.btnSUPReInit);
             this.groupBoxSup.Font = new System.Drawing.Font("Alstom", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxSup.ForeColor = System.Drawing.Color.Black;
             this.groupBoxSup.Location = new System.Drawing.Point(6, 3);
@@ -445,12 +454,12 @@
             // 
             // btnSUPTCPVue3DLV
             // 
-            this.btnSUPTCPVue3DLV.BackColor = System.Drawing.Color.DimGray;
+            this.btnSUPTCPVue3DLV.BackColor = System.Drawing.Color.LightGray;
             this.btnSUPTCPVue3DLV.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSUPTCPVue3DLV.Enabled = false;
             this.btnSUPTCPVue3DLV.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSUPTCPVue3DLV.ForeColor = System.Drawing.Color.White;
-            this.btnSUPTCPVue3DLV.Location = new System.Drawing.Point(516, 23);
+            this.btnSUPTCPVue3DLV.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnSUPTCPVue3DLV.Location = new System.Drawing.Point(431, 23);
             this.btnSUPTCPVue3DLV.Name = "btnSUPTCPVue3DLV";
             this.btnSUPTCPVue3DLV.Size = new System.Drawing.Size(95, 23);
             this.btnSUPTCPVue3DLV.TabIndex = 56;
@@ -459,12 +468,12 @@
             // 
             // btnSUPTCPCB
             // 
-            this.btnSUPTCPCB.BackColor = System.Drawing.Color.DimGray;
+            this.btnSUPTCPCB.BackColor = System.Drawing.Color.LightGray;
             this.btnSUPTCPCB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSUPTCPCB.Enabled = false;
             this.btnSUPTCPCB.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSUPTCPCB.ForeColor = System.Drawing.Color.White;
-            this.btnSUPTCPCB.Location = new System.Drawing.Point(415, 23);
+            this.btnSUPTCPCB.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnSUPTCPCB.Location = new System.Drawing.Point(330, 23);
             this.btnSUPTCPCB.Name = "btnSUPTCPCB";
             this.btnSUPTCPCB.Size = new System.Drawing.Size(95, 23);
             this.btnSUPTCPCB.TabIndex = 55;
@@ -473,12 +482,12 @@
             // 
             // btnSUPTCPBiStd
             // 
-            this.btnSUPTCPBiStd.BackColor = System.Drawing.Color.DimGray;
+            this.btnSUPTCPBiStd.BackColor = System.Drawing.Color.LightGray;
             this.btnSUPTCPBiStd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSUPTCPBiStd.Enabled = false;
             this.btnSUPTCPBiStd.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSUPTCPBiStd.ForeColor = System.Drawing.Color.White;
-            this.btnSUPTCPBiStd.Location = new System.Drawing.Point(316, 23);
+            this.btnSUPTCPBiStd.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnSUPTCPBiStd.Location = new System.Drawing.Point(231, 23);
             this.btnSUPTCPBiStd.Name = "btnSUPTCPBiStd";
             this.btnSUPTCPBiStd.Size = new System.Drawing.Size(95, 23);
             this.btnSUPTCPBiStd.TabIndex = 54;
@@ -487,12 +496,12 @@
             // 
             // btnSUPStartSim
             // 
-            this.btnSUPStartSim.BackColor = System.Drawing.Color.DimGray;
+            this.btnSUPStartSim.BackColor = System.Drawing.Color.LightGray;
             this.btnSUPStartSim.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSUPStartSim.Enabled = false;
             this.btnSUPStartSim.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSUPStartSim.ForeColor = System.Drawing.Color.White;
-            this.btnSUPStartSim.Location = new System.Drawing.Point(201, 23);
+            this.btnSUPStartSim.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnSUPStartSim.Location = new System.Drawing.Point(98, 47);
             this.btnSUPStartSim.Name = "btnSUPStartSim";
             this.btnSUPStartSim.Size = new System.Drawing.Size(95, 23);
             this.btnSUPStartSim.TabIndex = 53;
@@ -502,9 +511,9 @@
             // labelSUPCB4
             // 
             this.labelSUPCB4.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSUPCB4.Location = new System.Drawing.Point(412, 68);
+            this.labelSUPCB4.Location = new System.Drawing.Point(489, 75);
             this.labelSUPCB4.Name = "labelSUPCB4";
-            this.labelSUPCB4.Size = new System.Drawing.Size(129, 23);
+            this.labelSUPCB4.Size = new System.Drawing.Size(129, 18);
             this.labelSUPCB4.TabIndex = 52;
             this.labelSUPCB4.Text = "Scénarios";
             this.labelSUPCB4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -512,9 +521,9 @@
             // labelSUPCB3
             // 
             this.labelSUPCB3.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSUPCB3.Location = new System.Drawing.Point(286, 68);
+            this.labelSUPCB3.Location = new System.Drawing.Point(363, 75);
             this.labelSUPCB3.Name = "labelSUPCB3";
-            this.labelSUPCB3.Size = new System.Drawing.Size(129, 23);
+            this.labelSUPCB3.Size = new System.Drawing.Size(129, 18);
             this.labelSUPCB3.TabIndex = 51;
             this.labelSUPCB3.Text = "Connections";
             this.labelSUPCB3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -522,9 +531,9 @@
             // labelSUPCB2
             // 
             this.labelSUPCB2.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSUPCB2.Location = new System.Drawing.Point(151, 68);
+            this.labelSUPCB2.Location = new System.Drawing.Point(228, 75);
             this.labelSUPCB2.Name = "labelSUPCB2";
-            this.labelSUPCB2.Size = new System.Drawing.Size(129, 23);
+            this.labelSUPCB2.Size = new System.Drawing.Size(129, 18);
             this.labelSUPCB2.TabIndex = 50;
             this.labelSUPCB2.Text = "Chargement conf";
             this.labelSUPCB2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -532,50 +541,44 @@
             // labelSUPCB1
             // 
             this.labelSUPCB1.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSUPCB1.Location = new System.Drawing.Point(16, 68);
+            this.labelSUPCB1.Location = new System.Drawing.Point(93, 75);
             this.labelSUPCB1.Name = "labelSUPCB1";
-            this.labelSUPCB1.Size = new System.Drawing.Size(129, 23);
+            this.labelSUPCB1.Size = new System.Drawing.Size(129, 18);
             this.labelSUPCB1.TabIndex = 49;
             this.labelSUPCB1.Text = "Ouverture Projet CB";
             this.labelSUPCB1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // richTextBox1
+            // richTextBoxSUP
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(662, 17);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(579, 74);
-            this.richTextBox1.TabIndex = 48;
-            this.richTextBox1.Text = "";
+            this.richTextBoxSUP.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxSUP.Location = new System.Drawing.Point(662, 17);
+            this.richTextBoxSUP.Name = "richTextBoxSUP";
+            this.richTextBoxSUP.ReadOnly = true;
+            this.richTextBoxSUP.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.richTextBoxSUP.Size = new System.Drawing.Size(579, 74);
+            this.richTextBoxSUP.TabIndex = 48;
+            this.richTextBoxSUP.Text = "";
             // 
-            // btnSUPReconn
+            // btnSUPReInit
             // 
-            this.btnSUPReconn.BackColor = System.Drawing.Color.DimGray;
-            this.btnSUPReconn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSUPReconn.Enabled = false;
-            this.btnSUPReconn.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSUPReconn.ForeColor = System.Drawing.Color.White;
-            this.btnSUPReconn.Location = new System.Drawing.Point(98, 23);
-            this.btnSUPReconn.Name = "btnSUPReconn";
-            this.btnSUPReconn.Size = new System.Drawing.Size(85, 23);
-            this.btnSUPReconn.TabIndex = 47;
-            this.btnSUPReconn.Text = "Re Connexion";
-            this.btnSUPReconn.UseVisualStyleBackColor = false;
-            // 
-            // labelSUPConn
-            // 
-            this.labelSUPConn.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSUPConn.Location = new System.Drawing.Point(16, 23);
-            this.labelSUPConn.Name = "labelSUPConn";
-            this.labelSUPConn.Size = new System.Drawing.Size(64, 23);
-            this.labelSUPConn.TabIndex = 46;
-            this.labelSUPConn.Text = "Connexion";
-            this.labelSUPConn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSUPReInit.BackColor = System.Drawing.Color.LightGray;
+            this.btnSUPReInit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSUPReInit.Enabled = false;
+            this.btnSUPReInit.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSUPReInit.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnSUPReInit.Location = new System.Drawing.Point(98, 23);
+            this.btnSUPReInit.Name = "btnSUPReInit";
+            this.btnSUPReInit.Size = new System.Drawing.Size(95, 23);
+            this.btnSUPReInit.TabIndex = 47;
+            this.btnSUPReInit.Text = "ReInit";
+            this.btnSUPReInit.UseVisualStyleBackColor = false;
+            this.btnSUPReInit.Click += new System.EventHandler(this.btnSUPReInit_Click);
             // 
             // groupBoxVE2
             // 
             this.groupBoxVE2.BackColor = System.Drawing.Color.LightGray;
             this.groupBoxVE2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBoxVE2.Controls.Add(this.labelgroupBoxVE2);
             this.groupBoxVE2.Controls.Add(this.labelVE2StartEqt);
             this.groupBoxVE2.Controls.Add(this.btnStartStopHVCP_E2);
             this.groupBoxVE2.Controls.Add(this.label88);
@@ -629,11 +632,11 @@
             // 
             // btnStartStopHVCP_E2
             // 
-            this.btnStartStopHVCP_E2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopHVCP_E2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopHVCP_E2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopHVCP_E2.Enabled = false;
             this.btnStartStopHVCP_E2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopHVCP_E2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopHVCP_E2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopHVCP_E2.Location = new System.Drawing.Point(570, 68);
             this.btnStartStopHVCP_E2.Name = "btnStartStopHVCP_E2";
             this.btnStartStopHVCP_E2.Size = new System.Drawing.Size(24, 23);
@@ -653,11 +656,11 @@
             // 
             // btnStartStopDCU4_E2
             // 
-            this.btnStartStopDCU4_E2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU4_E2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU4_E2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU4_E2.Enabled = false;
             this.btnStartStopDCU4_E2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU4_E2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU4_E2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU4_E2.Location = new System.Drawing.Point(570, 45);
             this.btnStartStopDCU4_E2.Name = "btnStartStopDCU4_E2";
             this.btnStartStopDCU4_E2.Size = new System.Drawing.Size(24, 23);
@@ -677,11 +680,11 @@
             // 
             // btnStartStopDCU3_E2
             // 
-            this.btnStartStopDCU3_E2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU3_E2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU3_E2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU3_E2.Enabled = false;
             this.btnStartStopDCU3_E2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU3_E2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU3_E2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU3_E2.Location = new System.Drawing.Point(570, 22);
             this.btnStartStopDCU3_E2.Name = "btnStartStopDCU3_E2";
             this.btnStartStopDCU3_E2.Size = new System.Drawing.Size(24, 23);
@@ -701,11 +704,11 @@
             // 
             // btnStartStopDCU2_E2
             // 
-            this.btnStartStopDCU2_E2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU2_E2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU2_E2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU2_E2.Enabled = false;
             this.btnStartStopDCU2_E2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU2_E2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU2_E2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU2_E2.Location = new System.Drawing.Point(455, 67);
             this.btnStartStopDCU2_E2.Name = "btnStartStopDCU2_E2";
             this.btnStartStopDCU2_E2.Size = new System.Drawing.Size(24, 23);
@@ -725,11 +728,11 @@
             // 
             // btnStartStopDCU1_E2
             // 
-            this.btnStartStopDCU1_E2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU1_E2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU1_E2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU1_E2.Enabled = false;
             this.btnStartStopDCU1_E2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU1_E2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU1_E2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU1_E2.Location = new System.Drawing.Point(455, 44);
             this.btnStartStopDCU1_E2.Name = "btnStartStopDCU1_E2";
             this.btnStartStopDCU1_E2.Size = new System.Drawing.Size(24, 23);
@@ -749,11 +752,11 @@
             // 
             // btnStartStopTCU2_E2
             // 
-            this.btnStartStopTCU2_E2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopTCU2_E2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopTCU2_E2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopTCU2_E2.Enabled = false;
             this.btnStartStopTCU2_E2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopTCU2_E2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopTCU2_E2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopTCU2_E2.Location = new System.Drawing.Point(455, 21);
             this.btnStartStopTCU2_E2.Name = "btnStartStopTCU2_E2";
             this.btnStartStopTCU2_E2.Size = new System.Drawing.Size(24, 23);
@@ -773,11 +776,11 @@
             // 
             // btnStartStopTCU1_E2
             // 
-            this.btnStartStopTCU1_E2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopTCU1_E2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopTCU1_E2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopTCU1_E2.Enabled = false;
             this.btnStartStopTCU1_E2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopTCU1_E2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopTCU1_E2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopTCU1_E2.Location = new System.Drawing.Point(338, 67);
             this.btnStartStopTCU1_E2.Name = "btnStartStopTCU1_E2";
             this.btnStartStopTCU1_E2.Size = new System.Drawing.Size(24, 23);
@@ -797,11 +800,11 @@
             // 
             // btnStartStopPCU2_E2
             // 
-            this.btnStartStopPCU2_E2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopPCU2_E2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopPCU2_E2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopPCU2_E2.Enabled = false;
             this.btnStartStopPCU2_E2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopPCU2_E2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopPCU2_E2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopPCU2_E2.Location = new System.Drawing.Point(338, 44);
             this.btnStartStopPCU2_E2.Name = "btnStartStopPCU2_E2";
             this.btnStartStopPCU2_E2.Size = new System.Drawing.Size(24, 23);
@@ -821,11 +824,11 @@
             // 
             // btnStartStopPCU1_E2
             // 
-            this.btnStartStopPCU1_E2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopPCU1_E2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopPCU1_E2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopPCU1_E2.Enabled = false;
             this.btnStartStopPCU1_E2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopPCU1_E2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopPCU1_E2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopPCU1_E2.Location = new System.Drawing.Point(338, 21);
             this.btnStartStopPCU1_E2.Name = "btnStartStopPCU1_E2";
             this.btnStartStopPCU1_E2.Size = new System.Drawing.Size(24, 23);
@@ -845,11 +848,11 @@
             // 
             // btnStartStopBCU_E2
             // 
-            this.btnStartStopBCU_E2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopBCU_E2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopBCU_E2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopBCU_E2.Enabled = false;
             this.btnStartStopBCU_E2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopBCU_E2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopBCU_E2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopBCU_E2.Location = new System.Drawing.Point(223, 68);
             this.btnStartStopBCU_E2.Name = "btnStartStopBCU_E2";
             this.btnStartStopBCU_E2.Size = new System.Drawing.Size(24, 23);
@@ -869,11 +872,11 @@
             // 
             // btnStartStopATS_E2
             // 
-            this.btnStartStopATS_E2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopATS_E2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopATS_E2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopATS_E2.Enabled = false;
             this.btnStartStopATS_E2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopATS_E2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopATS_E2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopATS_E2.Location = new System.Drawing.Point(223, 45);
             this.btnStartStopATS_E2.Name = "btnStartStopATS_E2";
             this.btnStartStopATS_E2.Size = new System.Drawing.Size(24, 23);
@@ -893,11 +896,11 @@
             // 
             // btnStartStopACU_E2
             // 
-            this.btnStartStopACU_E2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopACU_E2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopACU_E2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopACU_E2.Enabled = false;
             this.btnStartStopACU_E2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopACU_E2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopACU_E2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopACU_E2.Location = new System.Drawing.Point(223, 22);
             this.btnStartStopACU_E2.Name = "btnStartStopACU_E2";
             this.btnStartStopACU_E2.Size = new System.Drawing.Size(24, 23);
@@ -917,20 +920,22 @@
             // 
             // richTextBoxVE2
             // 
-            this.richTextBoxVE2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxVE2.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVE2.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVE2.Name = "richTextBoxVE2";
+            this.richTextBoxVE2.ReadOnly = true;
+            this.richTextBoxVE2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.richTextBoxVE2.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxVE2.TabIndex = 48;
             this.richTextBoxVE2.Text = "";
             // 
             // buttonVE2Reconn
             // 
-            this.buttonVE2Reconn.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVE2Reconn.BackColor = System.Drawing.Color.LightGray;
             this.buttonVE2Reconn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVE2Reconn.Enabled = false;
             this.buttonVE2Reconn.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVE2Reconn.ForeColor = System.Drawing.Color.White;
+            this.buttonVE2Reconn.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVE2Reconn.Location = new System.Drawing.Point(98, 23);
             this.buttonVE2Reconn.Name = "buttonVE2Reconn";
             this.buttonVE2Reconn.Size = new System.Drawing.Size(85, 23);
@@ -950,11 +955,11 @@
             // 
             // buttonVE2Reinit
             // 
-            this.buttonVE2Reinit.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVE2Reinit.BackColor = System.Drawing.Color.LightGray;
             this.buttonVE2Reinit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVE2Reinit.Enabled = false;
             this.buttonVE2Reinit.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVE2Reinit.ForeColor = System.Drawing.Color.White;
+            this.buttonVE2Reinit.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVE2Reinit.Location = new System.Drawing.Point(98, 69);
             this.buttonVE2Reinit.Name = "buttonVE2Reinit";
             this.buttonVE2Reinit.Size = new System.Drawing.Size(85, 23);
@@ -964,11 +969,11 @@
             // 
             // buttonVE2Reload
             // 
-            this.buttonVE2Reload.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVE2Reload.BackColor = System.Drawing.Color.LightGray;
             this.buttonVE2Reload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVE2Reload.Enabled = false;
             this.buttonVE2Reload.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVE2Reload.ForeColor = System.Drawing.Color.White;
+            this.buttonVE2Reload.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVE2Reload.Location = new System.Drawing.Point(98, 46);
             this.buttonVE2Reload.Name = "buttonVE2Reload";
             this.buttonVE2Reload.Size = new System.Drawing.Size(85, 23);
@@ -1000,6 +1005,7 @@
             // 
             this.groupBoxVI2.BackColor = System.Drawing.Color.LightGray;
             this.groupBoxVI2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBoxVI2.Controls.Add(this.labelgroupBoxVI2);
             this.groupBoxVI2.Controls.Add(this.labelVI2StartEqt);
             this.groupBoxVI2.Controls.Add(this.btnStartStopHVCP_I2);
             this.groupBoxVI2.Controls.Add(this.label77);
@@ -1039,11 +1045,11 @@
             // 
             // btnStartStopHVCP_I2
             // 
-            this.btnStartStopHVCP_I2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopHVCP_I2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopHVCP_I2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopHVCP_I2.Enabled = false;
             this.btnStartStopHVCP_I2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopHVCP_I2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopHVCP_I2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopHVCP_I2.Location = new System.Drawing.Point(455, 44);
             this.btnStartStopHVCP_I2.Name = "btnStartStopHVCP_I2";
             this.btnStartStopHVCP_I2.Size = new System.Drawing.Size(24, 23);
@@ -1063,11 +1069,11 @@
             // 
             // btnStartStopDCU4_I2
             // 
-            this.btnStartStopDCU4_I2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU4_I2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU4_I2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU4_I2.Enabled = false;
             this.btnStartStopDCU4_I2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU4_I2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU4_I2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU4_I2.Location = new System.Drawing.Point(455, 21);
             this.btnStartStopDCU4_I2.Name = "btnStartStopDCU4_I2";
             this.btnStartStopDCU4_I2.Size = new System.Drawing.Size(24, 23);
@@ -1087,11 +1093,11 @@
             // 
             // btnStartStopDCU3_I2
             // 
-            this.btnStartStopDCU3_I2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU3_I2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU3_I2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU3_I2.Enabled = false;
             this.btnStartStopDCU3_I2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU3_I2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU3_I2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU3_I2.Location = new System.Drawing.Point(338, 67);
             this.btnStartStopDCU3_I2.Name = "btnStartStopDCU3_I2";
             this.btnStartStopDCU3_I2.Size = new System.Drawing.Size(24, 23);
@@ -1111,11 +1117,11 @@
             // 
             // btnStartStopDCU2_I2
             // 
-            this.btnStartStopDCU2_I2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU2_I2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU2_I2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU2_I2.Enabled = false;
             this.btnStartStopDCU2_I2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU2_I2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU2_I2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU2_I2.Location = new System.Drawing.Point(338, 44);
             this.btnStartStopDCU2_I2.Name = "btnStartStopDCU2_I2";
             this.btnStartStopDCU2_I2.Size = new System.Drawing.Size(24, 23);
@@ -1135,11 +1141,11 @@
             // 
             // btnStartStopDCU1_I2
             // 
-            this.btnStartStopDCU1_I2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU1_I2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU1_I2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU1_I2.Enabled = false;
             this.btnStartStopDCU1_I2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU1_I2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU1_I2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU1_I2.Location = new System.Drawing.Point(338, 21);
             this.btnStartStopDCU1_I2.Name = "btnStartStopDCU1_I2";
             this.btnStartStopDCU1_I2.Size = new System.Drawing.Size(24, 23);
@@ -1159,20 +1165,22 @@
             // 
             // richTextBoxVI2
             // 
-            this.richTextBoxVI2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxVI2.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVI2.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVI2.Name = "richTextBoxVI2";
+            this.richTextBoxVI2.ReadOnly = true;
+            this.richTextBoxVI2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.richTextBoxVI2.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxVI2.TabIndex = 48;
             this.richTextBoxVI2.Text = "";
             // 
             // buttonVI2Reconn
             // 
-            this.buttonVI2Reconn.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVI2Reconn.BackColor = System.Drawing.Color.LightGray;
             this.buttonVI2Reconn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVI2Reconn.Enabled = false;
             this.buttonVI2Reconn.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVI2Reconn.ForeColor = System.Drawing.Color.White;
+            this.buttonVI2Reconn.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVI2Reconn.Location = new System.Drawing.Point(98, 23);
             this.buttonVI2Reconn.Name = "buttonVI2Reconn";
             this.buttonVI2Reconn.Size = new System.Drawing.Size(85, 23);
@@ -1192,11 +1200,11 @@
             // 
             // buttonVI2Reinit
             // 
-            this.buttonVI2Reinit.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVI2Reinit.BackColor = System.Drawing.Color.LightGray;
             this.buttonVI2Reinit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVI2Reinit.Enabled = false;
             this.buttonVI2Reinit.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVI2Reinit.ForeColor = System.Drawing.Color.White;
+            this.buttonVI2Reinit.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVI2Reinit.Location = new System.Drawing.Point(98, 69);
             this.buttonVI2Reinit.Name = "buttonVI2Reinit";
             this.buttonVI2Reinit.Size = new System.Drawing.Size(85, 23);
@@ -1206,11 +1214,11 @@
             // 
             // buttonVI2Reload
             // 
-            this.buttonVI2Reload.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVI2Reload.BackColor = System.Drawing.Color.LightGray;
             this.buttonVI2Reload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVI2Reload.Enabled = false;
             this.buttonVI2Reload.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVI2Reload.ForeColor = System.Drawing.Color.White;
+            this.buttonVI2Reload.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVI2Reload.Location = new System.Drawing.Point(98, 46);
             this.buttonVI2Reload.Name = "buttonVI2Reload";
             this.buttonVI2Reload.Size = new System.Drawing.Size(85, 23);
@@ -1242,6 +1250,7 @@
             // 
             this.groupBoxVC2.BackColor = System.Drawing.Color.LightGray;
             this.groupBoxVC2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBoxVC2.Controls.Add(this.labelgroupBoxVC2);
             this.groupBoxVC2.Controls.Add(this.labelVC2StartEqt);
             this.groupBoxVC2.Controls.Add(this.btnStartStopTOI_C2);
             this.groupBoxVC2.Controls.Add(this.label61);
@@ -1287,11 +1296,11 @@
             // 
             // btnStartStopTOI_C2
             // 
-            this.btnStartStopTOI_C2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopTOI_C2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopTOI_C2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopTOI_C2.Enabled = false;
             this.btnStartStopTOI_C2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopTOI_C2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopTOI_C2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopTOI_C2.Location = new System.Drawing.Point(455, 67);
             this.btnStartStopTOI_C2.Name = "btnStartStopTOI_C2";
             this.btnStartStopTOI_C2.Size = new System.Drawing.Size(24, 23);
@@ -1311,11 +1320,11 @@
             // 
             // btnStartStopHVCP_C2
             // 
-            this.btnStartStopHVCP_C2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopHVCP_C2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopHVCP_C2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopHVCP_C2.Enabled = false;
             this.btnStartStopHVCP_C2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopHVCP_C2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopHVCP_C2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopHVCP_C2.Location = new System.Drawing.Point(455, 44);
             this.btnStartStopHVCP_C2.Name = "btnStartStopHVCP_C2";
             this.btnStartStopHVCP_C2.Size = new System.Drawing.Size(24, 23);
@@ -1335,11 +1344,11 @@
             // 
             // btnStartStopDCU4_C2
             // 
-            this.btnStartStopDCU4_C2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU4_C2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU4_C2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU4_C2.Enabled = false;
             this.btnStartStopDCU4_C2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU4_C2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU4_C2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU4_C2.Location = new System.Drawing.Point(455, 21);
             this.btnStartStopDCU4_C2.Name = "btnStartStopDCU4_C2";
             this.btnStartStopDCU4_C2.Size = new System.Drawing.Size(24, 23);
@@ -1359,11 +1368,11 @@
             // 
             // btnStartStopDCU3_C2
             // 
-            this.btnStartStopDCU3_C2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU3_C2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU3_C2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU3_C2.Enabled = false;
             this.btnStartStopDCU3_C2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU3_C2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU3_C2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU3_C2.Location = new System.Drawing.Point(338, 67);
             this.btnStartStopDCU3_C2.Name = "btnStartStopDCU3_C2";
             this.btnStartStopDCU3_C2.Size = new System.Drawing.Size(24, 23);
@@ -1383,11 +1392,11 @@
             // 
             // btnStartStopDCU2_C2
             // 
-            this.btnStartStopDCU2_C2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU2_C2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU2_C2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU2_C2.Enabled = false;
             this.btnStartStopDCU2_C2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU2_C2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU2_C2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU2_C2.Location = new System.Drawing.Point(338, 44);
             this.btnStartStopDCU2_C2.Name = "btnStartStopDCU2_C2";
             this.btnStartStopDCU2_C2.Size = new System.Drawing.Size(24, 23);
@@ -1407,11 +1416,11 @@
             // 
             // btnStartStopDCU1_C2
             // 
-            this.btnStartStopDCU1_C2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU1_C2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU1_C2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU1_C2.Enabled = false;
             this.btnStartStopDCU1_C2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU1_C2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU1_C2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU1_C2.Location = new System.Drawing.Point(338, 21);
             this.btnStartStopDCU1_C2.Name = "btnStartStopDCU1_C2";
             this.btnStartStopDCU1_C2.Size = new System.Drawing.Size(24, 23);
@@ -1431,11 +1440,11 @@
             // 
             // btnStartStopTCU2_C2
             // 
-            this.btnStartStopTCU2_C2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopTCU2_C2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopTCU2_C2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopTCU2_C2.Enabled = false;
             this.btnStartStopTCU2_C2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopTCU2_C2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopTCU2_C2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopTCU2_C2.Location = new System.Drawing.Point(223, 45);
             this.btnStartStopTCU2_C2.Name = "btnStartStopTCU2_C2";
             this.btnStartStopTCU2_C2.Size = new System.Drawing.Size(24, 23);
@@ -1455,11 +1464,11 @@
             // 
             // btnStartStopTCU1_C2
             // 
-            this.btnStartStopTCU1_C2.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopTCU1_C2.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopTCU1_C2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopTCU1_C2.Enabled = false;
             this.btnStartStopTCU1_C2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopTCU1_C2.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopTCU1_C2.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopTCU1_C2.Location = new System.Drawing.Point(223, 22);
             this.btnStartStopTCU1_C2.Name = "btnStartStopTCU1_C2";
             this.btnStartStopTCU1_C2.Size = new System.Drawing.Size(24, 23);
@@ -1479,20 +1488,22 @@
             // 
             // richTextBoxVC2
             // 
-            this.richTextBoxVC2.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxVC2.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVC2.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVC2.Name = "richTextBoxVC2";
+            this.richTextBoxVC2.ReadOnly = true;
+            this.richTextBoxVC2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.richTextBoxVC2.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxVC2.TabIndex = 48;
             this.richTextBoxVC2.Text = "";
             // 
             // buttonVC2Reconn
             // 
-            this.buttonVC2Reconn.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVC2Reconn.BackColor = System.Drawing.Color.LightGray;
             this.buttonVC2Reconn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVC2Reconn.Enabled = false;
             this.buttonVC2Reconn.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVC2Reconn.ForeColor = System.Drawing.Color.White;
+            this.buttonVC2Reconn.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVC2Reconn.Location = new System.Drawing.Point(98, 23);
             this.buttonVC2Reconn.Name = "buttonVC2Reconn";
             this.buttonVC2Reconn.Size = new System.Drawing.Size(85, 23);
@@ -1512,11 +1523,11 @@
             // 
             // buttonVC2Reinit
             // 
-            this.buttonVC2Reinit.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVC2Reinit.BackColor = System.Drawing.Color.LightGray;
             this.buttonVC2Reinit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVC2Reinit.Enabled = false;
             this.buttonVC2Reinit.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVC2Reinit.ForeColor = System.Drawing.Color.White;
+            this.buttonVC2Reinit.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVC2Reinit.Location = new System.Drawing.Point(98, 69);
             this.buttonVC2Reinit.Name = "buttonVC2Reinit";
             this.buttonVC2Reinit.Size = new System.Drawing.Size(85, 23);
@@ -1526,11 +1537,11 @@
             // 
             // buttonVC2Reload
             // 
-            this.buttonVC2Reload.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVC2Reload.BackColor = System.Drawing.Color.LightGray;
             this.buttonVC2Reload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVC2Reload.Enabled = false;
             this.buttonVC2Reload.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVC2Reload.ForeColor = System.Drawing.Color.White;
+            this.buttonVC2Reload.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVC2Reload.Location = new System.Drawing.Point(98, 46);
             this.buttonVC2Reload.Name = "buttonVC2Reload";
             this.buttonVC2Reload.Size = new System.Drawing.Size(85, 23);
@@ -1562,6 +1573,7 @@
             // 
             this.groupBoxVC1.BackColor = System.Drawing.Color.LightGray;
             this.groupBoxVC1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBoxVC1.Controls.Add(this.labelgroupBoxVC1);
             this.groupBoxVC1.Controls.Add(this.labelVC1StartEqt);
             this.groupBoxVC1.Controls.Add(this.btnStartStopTOI_C1);
             this.groupBoxVC1.Controls.Add(this.label46);
@@ -1607,11 +1619,11 @@
             // 
             // btnStartStopTOI_C1
             // 
-            this.btnStartStopTOI_C1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopTOI_C1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopTOI_C1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopTOI_C1.Enabled = false;
             this.btnStartStopTOI_C1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopTOI_C1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopTOI_C1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopTOI_C1.Location = new System.Drawing.Point(455, 67);
             this.btnStartStopTOI_C1.Name = "btnStartStopTOI_C1";
             this.btnStartStopTOI_C1.Size = new System.Drawing.Size(24, 23);
@@ -1631,11 +1643,11 @@
             // 
             // btnStartStopHVCP_C1
             // 
-            this.btnStartStopHVCP_C1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopHVCP_C1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopHVCP_C1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopHVCP_C1.Enabled = false;
             this.btnStartStopHVCP_C1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopHVCP_C1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopHVCP_C1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopHVCP_C1.Location = new System.Drawing.Point(455, 44);
             this.btnStartStopHVCP_C1.Name = "btnStartStopHVCP_C1";
             this.btnStartStopHVCP_C1.Size = new System.Drawing.Size(24, 23);
@@ -1655,11 +1667,11 @@
             // 
             // btnStartStopDCU4_C1
             // 
-            this.btnStartStopDCU4_C1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU4_C1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU4_C1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU4_C1.Enabled = false;
             this.btnStartStopDCU4_C1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU4_C1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU4_C1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU4_C1.Location = new System.Drawing.Point(455, 21);
             this.btnStartStopDCU4_C1.Name = "btnStartStopDCU4_C1";
             this.btnStartStopDCU4_C1.Size = new System.Drawing.Size(24, 23);
@@ -1679,11 +1691,11 @@
             // 
             // btnStartStopDCU3_C1
             // 
-            this.btnStartStopDCU3_C1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU3_C1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU3_C1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU3_C1.Enabled = false;
             this.btnStartStopDCU3_C1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU3_C1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU3_C1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU3_C1.Location = new System.Drawing.Point(338, 67);
             this.btnStartStopDCU3_C1.Name = "btnStartStopDCU3_C1";
             this.btnStartStopDCU3_C1.Size = new System.Drawing.Size(24, 23);
@@ -1703,11 +1715,11 @@
             // 
             // btnStartStopDCU2_C1
             // 
-            this.btnStartStopDCU2_C1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU2_C1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU2_C1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU2_C1.Enabled = false;
             this.btnStartStopDCU2_C1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU2_C1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU2_C1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU2_C1.Location = new System.Drawing.Point(338, 44);
             this.btnStartStopDCU2_C1.Name = "btnStartStopDCU2_C1";
             this.btnStartStopDCU2_C1.Size = new System.Drawing.Size(24, 23);
@@ -1727,11 +1739,11 @@
             // 
             // btnStartStopDCU1_C1
             // 
-            this.btnStartStopDCU1_C1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU1_C1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU1_C1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU1_C1.Enabled = false;
             this.btnStartStopDCU1_C1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU1_C1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU1_C1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU1_C1.Location = new System.Drawing.Point(338, 21);
             this.btnStartStopDCU1_C1.Name = "btnStartStopDCU1_C1";
             this.btnStartStopDCU1_C1.Size = new System.Drawing.Size(24, 23);
@@ -1751,11 +1763,11 @@
             // 
             // btnStartStopPCU2_C1
             // 
-            this.btnStartStopPCU2_C1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopPCU2_C1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopPCU2_C1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopPCU2_C1.Enabled = false;
             this.btnStartStopPCU2_C1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopPCU2_C1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopPCU2_C1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopPCU2_C1.Location = new System.Drawing.Point(223, 45);
             this.btnStartStopPCU2_C1.Name = "btnStartStopPCU2_C1";
             this.btnStartStopPCU2_C1.Size = new System.Drawing.Size(24, 23);
@@ -1775,11 +1787,11 @@
             // 
             // btnStartStopPCU1_C1
             // 
-            this.btnStartStopPCU1_C1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopPCU1_C1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopPCU1_C1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopPCU1_C1.Enabled = false;
             this.btnStartStopPCU1_C1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopPCU1_C1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopPCU1_C1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopPCU1_C1.Location = new System.Drawing.Point(223, 22);
             this.btnStartStopPCU1_C1.Name = "btnStartStopPCU1_C1";
             this.btnStartStopPCU1_C1.Size = new System.Drawing.Size(24, 23);
@@ -1799,20 +1811,22 @@
             // 
             // richTextBoxVC1
             // 
-            this.richTextBoxVC1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxVC1.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVC1.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVC1.Name = "richTextBoxVC1";
+            this.richTextBoxVC1.ReadOnly = true;
+            this.richTextBoxVC1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.richTextBoxVC1.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxVC1.TabIndex = 48;
             this.richTextBoxVC1.Text = "";
             // 
             // buttonVC1Reconn
             // 
-            this.buttonVC1Reconn.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVC1Reconn.BackColor = System.Drawing.Color.LightGray;
             this.buttonVC1Reconn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVC1Reconn.Enabled = false;
             this.buttonVC1Reconn.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVC1Reconn.ForeColor = System.Drawing.Color.White;
+            this.buttonVC1Reconn.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVC1Reconn.Location = new System.Drawing.Point(98, 23);
             this.buttonVC1Reconn.Name = "buttonVC1Reconn";
             this.buttonVC1Reconn.Size = new System.Drawing.Size(85, 23);
@@ -1832,11 +1846,11 @@
             // 
             // buttonVC1Reinit
             // 
-            this.buttonVC1Reinit.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVC1Reinit.BackColor = System.Drawing.Color.LightGray;
             this.buttonVC1Reinit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVC1Reinit.Enabled = false;
             this.buttonVC1Reinit.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVC1Reinit.ForeColor = System.Drawing.Color.White;
+            this.buttonVC1Reinit.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVC1Reinit.Location = new System.Drawing.Point(98, 69);
             this.buttonVC1Reinit.Name = "buttonVC1Reinit";
             this.buttonVC1Reinit.Size = new System.Drawing.Size(85, 23);
@@ -1846,11 +1860,11 @@
             // 
             // buttonVC1Reload
             // 
-            this.buttonVC1Reload.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVC1Reload.BackColor = System.Drawing.Color.LightGray;
             this.buttonVC1Reload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVC1Reload.Enabled = false;
             this.buttonVC1Reload.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVC1Reload.ForeColor = System.Drawing.Color.White;
+            this.buttonVC1Reload.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVC1Reload.Location = new System.Drawing.Point(98, 46);
             this.buttonVC1Reload.Name = "buttonVC1Reload";
             this.buttonVC1Reload.Size = new System.Drawing.Size(85, 23);
@@ -1882,6 +1896,7 @@
             // 
             this.groupBoxVIU.BackColor = System.Drawing.Color.LightGray;
             this.groupBoxVIU.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBoxVIU.Controls.Add(this.labelgroupBoxVIU);
             this.groupBoxVIU.Controls.Add(this.labelVIUStartEqt);
             this.groupBoxVIU.Controls.Add(this.btnStartStopTOI_IU);
             this.groupBoxVIU.Controls.Add(this.label31);
@@ -1923,11 +1938,11 @@
             // 
             // btnStartStopTOI_IU
             // 
-            this.btnStartStopTOI_IU.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopTOI_IU.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopTOI_IU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopTOI_IU.Enabled = false;
             this.btnStartStopTOI_IU.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopTOI_IU.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopTOI_IU.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopTOI_IU.Location = new System.Drawing.Point(455, 67);
             this.btnStartStopTOI_IU.Name = "btnStartStopTOI_IU";
             this.btnStartStopTOI_IU.Size = new System.Drawing.Size(24, 23);
@@ -1947,11 +1962,11 @@
             // 
             // btnStartStopHVCP_IU
             // 
-            this.btnStartStopHVCP_IU.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopHVCP_IU.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopHVCP_IU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopHVCP_IU.Enabled = false;
             this.btnStartStopHVCP_IU.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopHVCP_IU.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopHVCP_IU.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopHVCP_IU.Location = new System.Drawing.Point(455, 44);
             this.btnStartStopHVCP_IU.Name = "btnStartStopHVCP_IU";
             this.btnStartStopHVCP_IU.Size = new System.Drawing.Size(24, 23);
@@ -1971,11 +1986,11 @@
             // 
             // btnStartStopDCU4_IU
             // 
-            this.btnStartStopDCU4_IU.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU4_IU.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU4_IU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU4_IU.Enabled = false;
             this.btnStartStopDCU4_IU.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU4_IU.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU4_IU.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU4_IU.Location = new System.Drawing.Point(455, 21);
             this.btnStartStopDCU4_IU.Name = "btnStartStopDCU4_IU";
             this.btnStartStopDCU4_IU.Size = new System.Drawing.Size(24, 23);
@@ -1995,11 +2010,11 @@
             // 
             // btnStartStopDCU3_IU
             // 
-            this.btnStartStopDCU3_IU.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU3_IU.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU3_IU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU3_IU.Enabled = false;
             this.btnStartStopDCU3_IU.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU3_IU.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU3_IU.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU3_IU.Location = new System.Drawing.Point(338, 67);
             this.btnStartStopDCU3_IU.Name = "btnStartStopDCU3_IU";
             this.btnStartStopDCU3_IU.Size = new System.Drawing.Size(24, 23);
@@ -2019,11 +2034,11 @@
             // 
             // btnStartStopDCU2_IU
             // 
-            this.btnStartStopDCU2_IU.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU2_IU.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU2_IU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU2_IU.Enabled = false;
             this.btnStartStopDCU2_IU.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU2_IU.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU2_IU.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU2_IU.Location = new System.Drawing.Point(338, 44);
             this.btnStartStopDCU2_IU.Name = "btnStartStopDCU2_IU";
             this.btnStartStopDCU2_IU.Size = new System.Drawing.Size(24, 23);
@@ -2043,11 +2058,11 @@
             // 
             // btnStartStopDCU1_IU
             // 
-            this.btnStartStopDCU1_IU.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU1_IU.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU1_IU.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU1_IU.Enabled = false;
             this.btnStartStopDCU1_IU.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU1_IU.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU1_IU.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU1_IU.Location = new System.Drawing.Point(338, 21);
             this.btnStartStopDCU1_IU.Name = "btnStartStopDCU1_IU";
             this.btnStartStopDCU1_IU.Size = new System.Drawing.Size(24, 23);
@@ -2067,20 +2082,22 @@
             // 
             // richTextBoxVIU
             // 
-            this.richTextBoxVIU.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxVIU.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVIU.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVIU.Name = "richTextBoxVIU";
+            this.richTextBoxVIU.ReadOnly = true;
+            this.richTextBoxVIU.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.richTextBoxVIU.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxVIU.TabIndex = 48;
             this.richTextBoxVIU.Text = "";
             // 
             // buttonVIUReconn
             // 
-            this.buttonVIUReconn.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVIUReconn.BackColor = System.Drawing.Color.LightGray;
             this.buttonVIUReconn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVIUReconn.Enabled = false;
             this.buttonVIUReconn.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVIUReconn.ForeColor = System.Drawing.Color.White;
+            this.buttonVIUReconn.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVIUReconn.Location = new System.Drawing.Point(98, 23);
             this.buttonVIUReconn.Name = "buttonVIUReconn";
             this.buttonVIUReconn.Size = new System.Drawing.Size(85, 23);
@@ -2100,11 +2117,11 @@
             // 
             // buttonVIUReinit
             // 
-            this.buttonVIUReinit.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVIUReinit.BackColor = System.Drawing.Color.LightGray;
             this.buttonVIUReinit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVIUReinit.Enabled = false;
             this.buttonVIUReinit.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVIUReinit.ForeColor = System.Drawing.Color.White;
+            this.buttonVIUReinit.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVIUReinit.Location = new System.Drawing.Point(98, 69);
             this.buttonVIUReinit.Name = "buttonVIUReinit";
             this.buttonVIUReinit.Size = new System.Drawing.Size(85, 23);
@@ -2114,11 +2131,11 @@
             // 
             // buttonVIUReload
             // 
-            this.buttonVIUReload.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVIUReload.BackColor = System.Drawing.Color.LightGray;
             this.buttonVIUReload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVIUReload.Enabled = false;
             this.buttonVIUReload.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVIUReload.ForeColor = System.Drawing.Color.White;
+            this.buttonVIUReload.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVIUReload.Location = new System.Drawing.Point(98, 46);
             this.buttonVIUReload.Name = "buttonVIUReload";
             this.buttonVIUReload.Size = new System.Drawing.Size(85, 23);
@@ -2150,6 +2167,7 @@
             // 
             this.groupBoxVE1.BackColor = System.Drawing.Color.LightGray;
             this.groupBoxVE1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBoxVE1.Controls.Add(this.labelgroupBoxVE1);
             this.groupBoxVE1.Controls.Add(this.labelVE1StartEqt);
             this.groupBoxVE1.Controls.Add(this.btnStartStopTOI_E1);
             this.groupBoxVE1.Controls.Add(this.label1);
@@ -2199,11 +2217,11 @@
             // 
             // btnStartStopTOI_E1
             // 
-            this.btnStartStopTOI_E1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopTOI_E1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopTOI_E1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopTOI_E1.Enabled = false;
             this.btnStartStopTOI_E1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopTOI_E1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopTOI_E1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopTOI_E1.Location = new System.Drawing.Point(570, 68);
             this.btnStartStopTOI_E1.Name = "btnStartStopTOI_E1";
             this.btnStartStopTOI_E1.Size = new System.Drawing.Size(24, 23);
@@ -2223,11 +2241,11 @@
             // 
             // btnStartStopHVCP_E1
             // 
-            this.btnStartStopHVCP_E1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopHVCP_E1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopHVCP_E1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopHVCP_E1.Enabled = false;
             this.btnStartStopHVCP_E1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopHVCP_E1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopHVCP_E1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopHVCP_E1.Location = new System.Drawing.Point(570, 45);
             this.btnStartStopHVCP_E1.Name = "btnStartStopHVCP_E1";
             this.btnStartStopHVCP_E1.Size = new System.Drawing.Size(24, 23);
@@ -2247,11 +2265,11 @@
             // 
             // btnStartStopHVCD_E1
             // 
-            this.btnStartStopHVCD_E1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopHVCD_E1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopHVCD_E1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopHVCD_E1.Enabled = false;
             this.btnStartStopHVCD_E1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopHVCD_E1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopHVCD_E1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopHVCD_E1.Location = new System.Drawing.Point(570, 22);
             this.btnStartStopHVCD_E1.Name = "btnStartStopHVCD_E1";
             this.btnStartStopHVCD_E1.Size = new System.Drawing.Size(24, 23);
@@ -2271,11 +2289,11 @@
             // 
             // btnStartStopDCU4_E1
             // 
-            this.btnStartStopDCU4_E1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU4_E1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU4_E1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU4_E1.Enabled = false;
             this.btnStartStopDCU4_E1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU4_E1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU4_E1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU4_E1.Location = new System.Drawing.Point(455, 67);
             this.btnStartStopDCU4_E1.Name = "btnStartStopDCU4_E1";
             this.btnStartStopDCU4_E1.Size = new System.Drawing.Size(24, 23);
@@ -2295,11 +2313,11 @@
             // 
             // btnStartStopDCU3_E1
             // 
-            this.btnStartStopDCU3_E1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU3_E1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU3_E1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU3_E1.Enabled = false;
             this.btnStartStopDCU3_E1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU3_E1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU3_E1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU3_E1.Location = new System.Drawing.Point(455, 44);
             this.btnStartStopDCU3_E1.Name = "btnStartStopDCU3_E1";
             this.btnStartStopDCU3_E1.Size = new System.Drawing.Size(24, 23);
@@ -2319,11 +2337,11 @@
             // 
             // btnStartStopDCU2_E1
             // 
-            this.btnStartStopDCU2_E1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU2_E1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU2_E1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU2_E1.Enabled = false;
             this.btnStartStopDCU2_E1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU2_E1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU2_E1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU2_E1.Location = new System.Drawing.Point(455, 21);
             this.btnStartStopDCU2_E1.Name = "btnStartStopDCU2_E1";
             this.btnStartStopDCU2_E1.Size = new System.Drawing.Size(24, 23);
@@ -2343,11 +2361,11 @@
             // 
             // btnStartStopDCU1_E1
             // 
-            this.btnStartStopDCU1_E1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopDCU1_E1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopDCU1_E1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopDCU1_E1.Enabled = false;
             this.btnStartStopDCU1_E1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopDCU1_E1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopDCU1_E1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopDCU1_E1.Location = new System.Drawing.Point(338, 67);
             this.btnStartStopDCU1_E1.Name = "btnStartStopDCU1_E1";
             this.btnStartStopDCU1_E1.Size = new System.Drawing.Size(24, 23);
@@ -2367,11 +2385,11 @@
             // 
             // btnStartStopBRU_E1
             // 
-            this.btnStartStopBRU_E1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopBRU_E1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopBRU_E1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopBRU_E1.Enabled = false;
             this.btnStartStopBRU_E1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopBRU_E1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopBRU_E1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopBRU_E1.Location = new System.Drawing.Point(338, 44);
             this.btnStartStopBRU_E1.Name = "btnStartStopBRU_E1";
             this.btnStartStopBRU_E1.Size = new System.Drawing.Size(24, 23);
@@ -2391,11 +2409,11 @@
             // 
             // btnStartStopATS_E1
             // 
-            this.btnStartStopATS_E1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopATS_E1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopATS_E1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopATS_E1.Enabled = false;
             this.btnStartStopATS_E1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopATS_E1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopATS_E1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopATS_E1.Location = new System.Drawing.Point(338, 21);
             this.btnStartStopATS_E1.Name = "btnStartStopATS_E1";
             this.btnStartStopATS_E1.Size = new System.Drawing.Size(24, 23);
@@ -2415,11 +2433,11 @@
             // 
             // btnStartStopACU_E1
             // 
-            this.btnStartStopACU_E1.BackColor = System.Drawing.Color.DimGray;
+            this.btnStartStopACU_E1.BackColor = System.Drawing.Color.Silver;
             this.btnStartStopACU_E1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStartStopACU_E1.Enabled = false;
             this.btnStartStopACU_E1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStartStopACU_E1.ForeColor = System.Drawing.Color.White;
+            this.btnStartStopACU_E1.ForeColor = System.Drawing.Color.DarkBlue;
             this.btnStartStopACU_E1.Location = new System.Drawing.Point(223, 22);
             this.btnStartStopACU_E1.Name = "btnStartStopACU_E1";
             this.btnStartStopACU_E1.Size = new System.Drawing.Size(24, 23);
@@ -2439,20 +2457,22 @@
             // 
             // richTextBoxVE1
             // 
-            this.richTextBoxVE1.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxVE1.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVE1.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVE1.Name = "richTextBoxVE1";
+            this.richTextBoxVE1.ReadOnly = true;
+            this.richTextBoxVE1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.richTextBoxVE1.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxVE1.TabIndex = 48;
             this.richTextBoxVE1.Text = "";
             // 
             // buttonVE1Reconn
             // 
-            this.buttonVE1Reconn.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVE1Reconn.BackColor = System.Drawing.Color.LightGray;
             this.buttonVE1Reconn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVE1Reconn.Enabled = false;
             this.buttonVE1Reconn.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVE1Reconn.ForeColor = System.Drawing.Color.White;
+            this.buttonVE1Reconn.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVE1Reconn.Location = new System.Drawing.Point(98, 23);
             this.buttonVE1Reconn.Name = "buttonVE1Reconn";
             this.buttonVE1Reconn.Size = new System.Drawing.Size(85, 23);
@@ -2472,11 +2492,11 @@
             // 
             // buttonVE1Reinit
             // 
-            this.buttonVE1Reinit.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVE1Reinit.BackColor = System.Drawing.Color.LightGray;
             this.buttonVE1Reinit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVE1Reinit.Enabled = false;
             this.buttonVE1Reinit.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVE1Reinit.ForeColor = System.Drawing.Color.White;
+            this.buttonVE1Reinit.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVE1Reinit.Location = new System.Drawing.Point(98, 69);
             this.buttonVE1Reinit.Name = "buttonVE1Reinit";
             this.buttonVE1Reinit.Size = new System.Drawing.Size(85, 23);
@@ -2486,11 +2506,11 @@
             // 
             // buttonVE1Reload
             // 
-            this.buttonVE1Reload.BackColor = System.Drawing.Color.DimGray;
+            this.buttonVE1Reload.BackColor = System.Drawing.Color.LightGray;
             this.buttonVE1Reload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonVE1Reload.Enabled = false;
             this.buttonVE1Reload.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVE1Reload.ForeColor = System.Drawing.Color.White;
+            this.buttonVE1Reload.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonVE1Reload.Location = new System.Drawing.Point(98, 46);
             this.buttonVE1Reload.Name = "buttonVE1Reload";
             this.buttonVE1Reload.Size = new System.Drawing.Size(85, 23);
@@ -2522,6 +2542,7 @@
             // 
             this.groupBoxPUP.BackColor = System.Drawing.Color.LightGray;
             this.groupBoxPUP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBoxPUP.Controls.Add(this.labelgroupBoxPUP);
             this.groupBoxPUP.Controls.Add(this.labelPUPStartEqt);
             this.groupBoxPUP.Controls.Add(this.richTextBoxPUP);
             this.groupBoxPUP.Controls.Add(this.buttonPUPReconn);
@@ -2552,21 +2573,23 @@
             // 
             // richTextBoxPUP
             // 
-            this.richTextBoxPUP.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxPUP.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxPUP.ForeColor = System.Drawing.Color.Black;
             this.richTextBoxPUP.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxPUP.Name = "richTextBoxPUP";
+            this.richTextBoxPUP.ReadOnly = true;
+            this.richTextBoxPUP.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
             this.richTextBoxPUP.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxPUP.TabIndex = 48;
             this.richTextBoxPUP.Text = "";
             // 
             // buttonPUPReconn
             // 
-            this.buttonPUPReconn.BackColor = System.Drawing.Color.DimGray;
+            this.buttonPUPReconn.BackColor = System.Drawing.Color.LightGray;
             this.buttonPUPReconn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPUPReconn.Enabled = false;
             this.buttonPUPReconn.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPUPReconn.ForeColor = System.Drawing.Color.White;
+            this.buttonPUPReconn.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonPUPReconn.Location = new System.Drawing.Point(98, 23);
             this.buttonPUPReconn.Name = "buttonPUPReconn";
             this.buttonPUPReconn.Size = new System.Drawing.Size(85, 23);
@@ -2587,11 +2610,11 @@
             // 
             // buttonPUPReinit
             // 
-            this.buttonPUPReinit.BackColor = System.Drawing.Color.DimGray;
+            this.buttonPUPReinit.BackColor = System.Drawing.Color.LightGray;
             this.buttonPUPReinit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPUPReinit.Enabled = false;
             this.buttonPUPReinit.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPUPReinit.ForeColor = System.Drawing.Color.White;
+            this.buttonPUPReinit.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonPUPReinit.Location = new System.Drawing.Point(98, 69);
             this.buttonPUPReinit.Name = "buttonPUPReinit";
             this.buttonPUPReinit.Size = new System.Drawing.Size(85, 23);
@@ -2601,11 +2624,11 @@
             // 
             // buttonPUPReload
             // 
-            this.buttonPUPReload.BackColor = System.Drawing.Color.DimGray;
+            this.buttonPUPReload.BackColor = System.Drawing.Color.LightGray;
             this.buttonPUPReload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonPUPReload.Enabled = false;
             this.buttonPUPReload.Font = new System.Drawing.Font("Alstom", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPUPReload.ForeColor = System.Drawing.Color.White;
+            this.buttonPUPReload.ForeColor = System.Drawing.Color.DarkBlue;
             this.buttonPUPReload.Location = new System.Drawing.Point(98, 46);
             this.buttonPUPReload.Name = "buttonPUPReload";
             this.buttonPUPReload.Size = new System.Drawing.Size(85, 23);
@@ -2637,18 +2660,105 @@
             // tabGeneral
             // 
             this.tabGeneral.BackColor = System.Drawing.Color.Gray;
-            this.tabGeneral.Location = new System.Drawing.Point(4, 22);
+            this.tabGeneral.Location = new System.Drawing.Point(4, 28);
             this.tabGeneral.Name = "tabGeneral";
             this.tabGeneral.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGeneral.Size = new System.Drawing.Size(1259, 791);
+            this.tabGeneral.Size = new System.Drawing.Size(1259, 785);
             this.tabGeneral.TabIndex = 1;
-            this.tabGeneral.Text = "Debug";
+            this.tabGeneral.Text = "     Debug       ";
+            // 
+            // labelSUPCB0
+            // 
+            this.labelSUPCB0.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSUPCB0.Location = new System.Drawing.Point(6, 75);
+            this.labelSUPCB0.Name = "labelSUPCB0";
+            this.labelSUPCB0.Size = new System.Drawing.Size(88, 18);
+            this.labelSUPCB0.TabIndex = 57;
+            this.labelSUPCB0.Text = "ControlBuild:";
+            this.labelSUPCB0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelgroupBoxPUP
+            // 
+            this.labelgroupBoxPUP.AutoSize = true;
+            this.labelgroupBoxPUP.BackColor = System.Drawing.Color.LightGray;
+            this.labelgroupBoxPUP.ForeColor = System.Drawing.Color.Black;
+            this.labelgroupBoxPUP.Location = new System.Drawing.Point(6, 0);
+            this.labelgroupBoxPUP.Name = "labelgroupBoxPUP";
+            this.labelgroupBoxPUP.Size = new System.Drawing.Size(96, 22);
+            this.labelgroupBoxPUP.TabIndex = 50;
+            this.labelgroupBoxPUP.Text = "simulbr-PUP1";
+            // 
+            // labelgroupBoxVE1
+            // 
+            this.labelgroupBoxVE1.AutoSize = true;
+            this.labelgroupBoxVE1.BackColor = System.Drawing.Color.LightGray;
+            this.labelgroupBoxVE1.ForeColor = System.Drawing.Color.Black;
+            this.labelgroupBoxVE1.Location = new System.Drawing.Point(6, 0);
+            this.labelgroupBoxVE1.Name = "labelgroupBoxVE1";
+            this.labelgroupBoxVE1.Size = new System.Drawing.Size(99, 22);
+            this.labelgroupBoxVE1.TabIndex = 86;
+            this.labelgroupBoxVE1.Text = "simulbr-VE1-3";
+            // 
+            // labelgroupBoxVIU
+            // 
+            this.labelgroupBoxVIU.AutoSize = true;
+            this.labelgroupBoxVIU.BackColor = System.Drawing.Color.LightGray;
+            this.labelgroupBoxVIU.ForeColor = System.Drawing.Color.Black;
+            this.labelgroupBoxVIU.Location = new System.Drawing.Point(6, 0);
+            this.labelgroupBoxVIU.Name = "labelgroupBoxVIU";
+            this.labelgroupBoxVIU.Size = new System.Drawing.Size(82, 22);
+            this.labelgroupBoxVIU.TabIndex = 87;
+            this.labelgroupBoxVIU.Text = "simulbr-VIU";
+            // 
+            // labelgroupBoxVC1
+            // 
+            this.labelgroupBoxVC1.AutoSize = true;
+            this.labelgroupBoxVC1.BackColor = System.Drawing.Color.LightGray;
+            this.labelgroupBoxVC1.ForeColor = System.Drawing.Color.Black;
+            this.labelgroupBoxVC1.Location = new System.Drawing.Point(6, 0);
+            this.labelgroupBoxVC1.Name = "labelgroupBoxVC1";
+            this.labelgroupBoxVC1.Size = new System.Drawing.Size(85, 22);
+            this.labelgroupBoxVC1.TabIndex = 88;
+            this.labelgroupBoxVC1.Text = "simulbr-VC1";
+            // 
+            // labelgroupBoxVC2
+            // 
+            this.labelgroupBoxVC2.AutoSize = true;
+            this.labelgroupBoxVC2.BackColor = System.Drawing.Color.LightGray;
+            this.labelgroupBoxVC2.ForeColor = System.Drawing.Color.Black;
+            this.labelgroupBoxVC2.Location = new System.Drawing.Point(6, 0);
+            this.labelgroupBoxVC2.Name = "labelgroupBoxVC2";
+            this.labelgroupBoxVC2.Size = new System.Drawing.Size(84, 22);
+            this.labelgroupBoxVC2.TabIndex = 89;
+            this.labelgroupBoxVC2.Text = "simulbr-VC2";
+            // 
+            // labelgroupBoxVI2
+            // 
+            this.labelgroupBoxVI2.AutoSize = true;
+            this.labelgroupBoxVI2.BackColor = System.Drawing.Color.LightGray;
+            this.labelgroupBoxVI2.ForeColor = System.Drawing.Color.Black;
+            this.labelgroupBoxVI2.Location = new System.Drawing.Point(6, 0);
+            this.labelgroupBoxVI2.Name = "labelgroupBoxVI2";
+            this.labelgroupBoxVI2.Size = new System.Drawing.Size(80, 22);
+            this.labelgroupBoxVI2.TabIndex = 90;
+            this.labelgroupBoxVI2.Text = "simulbr-VI2";
+            // 
+            // labelgroupBoxVE2
+            // 
+            this.labelgroupBoxVE2.AutoSize = true;
+            this.labelgroupBoxVE2.BackColor = System.Drawing.Color.LightGray;
+            this.labelgroupBoxVE2.ForeColor = System.Drawing.Color.Black;
+            this.labelgroupBoxVE2.Location = new System.Drawing.Point(6, 0);
+            this.labelgroupBoxVE2.Name = "labelgroupBoxVE2";
+            this.labelgroupBoxVE2.Size = new System.Drawing.Size(97, 22);
+            this.labelgroupBoxVE2.TabIndex = 91;
+            this.labelgroupBoxVE2.Text = "simulbr-VE2-2";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1288, 838);
+            this.ClientSize = new System.Drawing.Size(1288, 837);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -2661,12 +2771,19 @@
             this.tabSupTB.ResumeLayout(false);
             this.groupBoxSup.ResumeLayout(false);
             this.groupBoxVE2.ResumeLayout(false);
+            this.groupBoxVE2.PerformLayout();
             this.groupBoxVI2.ResumeLayout(false);
+            this.groupBoxVI2.PerformLayout();
             this.groupBoxVC2.ResumeLayout(false);
+            this.groupBoxVC2.PerformLayout();
             this.groupBoxVC1.ResumeLayout(false);
+            this.groupBoxVC1.PerformLayout();
             this.groupBoxVIU.ResumeLayout(false);
+            this.groupBoxVIU.PerformLayout();
             this.groupBoxVE1.ResumeLayout(false);
+            this.groupBoxVE1.PerformLayout();
             this.groupBoxPUP.ResumeLayout(false);
+            this.groupBoxPUP.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2848,9 +2965,8 @@
         private System.Windows.Forms.Label labelSUPCB3;
         private System.Windows.Forms.Label labelSUPCB2;
         private System.Windows.Forms.Label labelSUPCB1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button btnSUPReconn;
-        private System.Windows.Forms.Label labelSUPConn;
+        private System.Windows.Forms.RichTextBox richTextBoxSUP;
+        private System.Windows.Forms.Button btnSUPReInit;
         private System.Windows.Forms.Button btnSUPTCPVue3DLV;
         private System.Windows.Forms.Button btnSUPTCPCB;
         private System.Windows.Forms.Button btnSUPTCPBiStd;
@@ -2863,6 +2979,14 @@
         private System.Windows.Forms.Label labelVIUStartEqt;
         private System.Windows.Forms.Label labelVE1StartEqt;
         private System.Windows.Forms.Label labelPUPStartEqt;
+        private System.Windows.Forms.Label labelSUPCB0;
+        private System.Windows.Forms.Label labelgroupBoxPUP;
+        private System.Windows.Forms.Label labelgroupBoxVE2;
+        private System.Windows.Forms.Label labelgroupBoxVI2;
+        private System.Windows.Forms.Label labelgroupBoxVC2;
+        private System.Windows.Forms.Label labelgroupBoxVC1;
+        private System.Windows.Forms.Label labelgroupBoxVIU;
+        private System.Windows.Forms.Label labelgroupBoxVE1;
     }
 }
 

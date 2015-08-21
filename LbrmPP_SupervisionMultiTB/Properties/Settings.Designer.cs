@@ -8,22 +8,186 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LbrmPP_SupervisionMultiTB.Properties
-{
-
-
+namespace LbrmPP_SupervisionMultiTB.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "12.0.0.0")]
+    public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("D:\\CP_Laborame_8.4_5")]
+        public string PathCB {
+            get {
+                return ((string)(this["PathCB"]));
+            }
+            set {
+                this["PathCB"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CP_Laborame.cbp")]
+        public string CBProjectName {
+            get {
+                return ((string)(this["CBProjectName"]));
+            }
+            set {
+                this["CBProjectName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("cp_laborame")]
+        public string CBApplicationName {
+            get {
+                return ((string)(this["CBApplicationName"]));
+            }
+            set {
+                this["CBApplicationName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("cp_laborame")]
+        public string CBTaskName {
+            get {
+                return ((string)(this["CBTaskName"]));
+            }
+            set {
+                this["CBTaskName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\8.9_5")]
+        public string PathXML {
+            get {
+                return ((string)(this["PathXML"]));
+            }
+            set {
+                this["PathXML"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10.23.154.140")]
+        public string IP_PUP {
+            get {
+                return ((string)(this["IP_PUP"]));
+            }
+            set {
+                this["IP_PUP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10.23.154.132")]
+        public string IP_VE1 {
+            get {
+                return ((string)(this["IP_VE1"]));
+            }
+            set {
+                this["IP_VE1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10.23.154.133")]
+        public string IP_VIU {
+            get {
+                return ((string)(this["IP_VIU"]));
+            }
+            set {
+                this["IP_VIU"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10.23.154.135")]
+        public string IP_VC1 {
+            get {
+                return ((string)(this["IP_VC1"]));
+            }
+            set {
+                this["IP_VC1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10.23.154.136")]
+        public string IP_VC2 {
+            get {
+                return ((string)(this["IP_VC2"]));
+            }
+            set {
+                this["IP_VC2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10.23.154.137")]
+        public string IP_VI2 {
+            get {
+                return ((string)(this["IP_VI2"]));
+            }
+            set {
+                this["IP_VI2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10.23.154.139")]
+        public string IP_VE2 {
+            get {
+                return ((string)(this["IP_VE2"]));
+            }
+            set {
+                this["IP_VE2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10.23.153.14")]
+        public string IP_Vue3D {
+            get {
+                return ((string)(this["IP_Vue3D"]));
+            }
+            set {
+                this["IP_Vue3D"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10.23.154.130")]
+        public string IP_SimuBiStd {
+            get {
+                return ((string)(this["IP_SimuBiStd"]));
+            }
+            set {
+                this["IP_SimuBiStd"] = value;
             }
         }
     }

@@ -1,7 +1,48 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LbrmPP_SupervisionMultiTB.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PathCB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\CP_Laborame_8.4_5</Value>
+    </Setting>
+    <Setting Name="CBProjectName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CP_Laborame.cbp</Value>
+    </Setting>
+    <Setting Name="CBApplicationName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cp_laborame</Value>
+    </Setting>
+    <Setting Name="CBTaskName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cp_laborame</Value>
+    </Setting>
+    <Setting Name="PathXML" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\8.9_5</Value>
+    </Setting>
+    <Setting Name="IP_PUP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.23.154.140</Value>
+    </Setting>
+    <Setting Name="IP_VE1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.23.154.132</Value>
+    </Setting>
+    <Setting Name="IP_VIU" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.23.154.133</Value>
+    </Setting>
+    <Setting Name="IP_VC1" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.23.154.135</Value>
+    </Setting>
+    <Setting Name="IP_VC2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.23.154.136</Value>
+    </Setting>
+    <Setting Name="IP_VI2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.23.154.137</Value>
+    </Setting>
+    <Setting Name="IP_VE2" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.23.154.139</Value>
+    </Setting>
+    <Setting Name="IP_Vue3D" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.23.153.14</Value>
+    </Setting>
+    <Setting Name="IP_SimuBiStd" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.23.154.130</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
