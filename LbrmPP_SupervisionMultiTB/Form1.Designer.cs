@@ -45,6 +45,7 @@
             this.label_PathCB = new System.Windows.Forms.Label();
             this.tabSupTB = new System.Windows.Forms.TabPage();
             this.groupBoxSup = new System.Windows.Forms.GroupBox();
+            this.labelSUPCB0 = new System.Windows.Forms.Label();
             this.btnSUPTCPVue3DLV = new System.Windows.Forms.Button();
             this.btnSUPTCPCB = new System.Windows.Forms.Button();
             this.btnSUPTCPBiStd = new System.Windows.Forms.Button();
@@ -56,6 +57,7 @@
             this.richTextBoxSUP = new System.Windows.Forms.RichTextBox();
             this.btnSUPReInit = new System.Windows.Forms.Button();
             this.groupBoxVE2 = new System.Windows.Forms.GroupBox();
+            this.labelgroupBoxVE2 = new System.Windows.Forms.Label();
             this.labelVE2StartEqt = new System.Windows.Forms.Label();
             this.btnStartStopHVCP_E2 = new System.Windows.Forms.Button();
             this.label88 = new System.Windows.Forms.Label();
@@ -89,6 +91,7 @@
             this.labelVE2Eacb = new System.Windows.Forms.Label();
             this.labelVE2Hard = new System.Windows.Forms.Label();
             this.groupBoxVI2 = new System.Windows.Forms.GroupBox();
+            this.labelgroupBoxVI2 = new System.Windows.Forms.Label();
             this.labelVI2StartEqt = new System.Windows.Forms.Label();
             this.btnStartStopHVCP_I2 = new System.Windows.Forms.Button();
             this.label77 = new System.Windows.Forms.Label();
@@ -108,6 +111,7 @@
             this.labelVI2Eacb = new System.Windows.Forms.Label();
             this.labelVI2Hard = new System.Windows.Forms.Label();
             this.groupBoxVC2 = new System.Windows.Forms.GroupBox();
+            this.labelgroupBoxVC2 = new System.Windows.Forms.Label();
             this.labelVC2StartEqt = new System.Windows.Forms.Label();
             this.btnStartStopTOI_C2 = new System.Windows.Forms.Button();
             this.label61 = new System.Windows.Forms.Label();
@@ -133,6 +137,7 @@
             this.labelVC2Eacb = new System.Windows.Forms.Label();
             this.labelVC2Hard = new System.Windows.Forms.Label();
             this.groupBoxVC1 = new System.Windows.Forms.GroupBox();
+            this.labelgroupBoxVC1 = new System.Windows.Forms.Label();
             this.labelVC1StartEqt = new System.Windows.Forms.Label();
             this.btnStartStopTOI_C1 = new System.Windows.Forms.Button();
             this.label46 = new System.Windows.Forms.Label();
@@ -158,6 +163,7 @@
             this.labelVC1Eacb = new System.Windows.Forms.Label();
             this.labelVC1Hard = new System.Windows.Forms.Label();
             this.groupBoxVIU = new System.Windows.Forms.GroupBox();
+            this.labelgroupBoxVIU = new System.Windows.Forms.Label();
             this.labelVIUStartEqt = new System.Windows.Forms.Label();
             this.btnStartStopTOI_IU = new System.Windows.Forms.Button();
             this.label31 = new System.Windows.Forms.Label();
@@ -179,6 +185,7 @@
             this.labelVIUEacb = new System.Windows.Forms.Label();
             this.labelVIUHard = new System.Windows.Forms.Label();
             this.groupBoxVE1 = new System.Windows.Forms.GroupBox();
+            this.labelgroupBoxVE1 = new System.Windows.Forms.Label();
             this.labelVE1StartEqt = new System.Windows.Forms.Label();
             this.btnStartStopTOI_E1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -208,6 +215,7 @@
             this.labelVE1Eacb = new System.Windows.Forms.Label();
             this.labelVE1Hard = new System.Windows.Forms.Label();
             this.groupBoxPUP = new System.Windows.Forms.GroupBox();
+            this.labelgroupBoxPUP = new System.Windows.Forms.Label();
             this.labelPUPStartEqt = new System.Windows.Forms.Label();
             this.richTextBoxPUP = new System.Windows.Forms.RichTextBox();
             this.buttonPUPReconn = new System.Windows.Forms.Button();
@@ -217,14 +225,6 @@
             this.labelPUPEacb = new System.Windows.Forms.Label();
             this.labelPUPHard = new System.Windows.Forms.Label();
             this.tabGeneral = new System.Windows.Forms.TabPage();
-            this.labelSUPCB0 = new System.Windows.Forms.Label();
-            this.labelgroupBoxPUP = new System.Windows.Forms.Label();
-            this.labelgroupBoxVE1 = new System.Windows.Forms.Label();
-            this.labelgroupBoxVIU = new System.Windows.Forms.Label();
-            this.labelgroupBoxVC1 = new System.Windows.Forms.Label();
-            this.labelgroupBoxVC2 = new System.Windows.Forms.Label();
-            this.labelgroupBoxVI2 = new System.Windows.Forms.Label();
-            this.labelgroupBoxVE2 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabConf.SuspendLayout();
             this.tabSupTB.SuspendLayout();
@@ -452,6 +452,16 @@
             this.groupBoxSup.TabStop = false;
             this.groupBoxSup.Text = "PC Supervision";
             // 
+            // labelSUPCB0
+            // 
+            this.labelSUPCB0.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSUPCB0.Location = new System.Drawing.Point(6, 75);
+            this.labelSUPCB0.Name = "labelSUPCB0";
+            this.labelSUPCB0.Size = new System.Drawing.Size(88, 18);
+            this.labelSUPCB0.TabIndex = 57;
+            this.labelSUPCB0.Text = "ControlBuild:";
+            this.labelSUPCB0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnSUPTCPVue3DLV
             // 
             this.btnSUPTCPVue3DLV.BackColor = System.Drawing.Color.LightGray;
@@ -550,13 +560,17 @@
             // 
             // richTextBoxSUP
             // 
+            this.richTextBoxSUP.CausesValidation = false;
+            this.richTextBoxSUP.DetectUrls = false;
             this.richTextBoxSUP.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxSUP.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxSUP.Name = "richTextBoxSUP";
             this.richTextBoxSUP.ReadOnly = true;
             this.richTextBoxSUP.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.richTextBoxSUP.ShortcutsEnabled = false;
             this.richTextBoxSUP.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxSUP.TabIndex = 48;
+            this.richTextBoxSUP.TabStop = false;
             this.richTextBoxSUP.Text = "";
             // 
             // btnSUPReInit
@@ -619,6 +633,17 @@
             this.groupBoxVE2.TabIndex = 45;
             this.groupBoxVE2.TabStop = false;
             this.groupBoxVE2.Text = "simulbr-VE2-2";
+            // 
+            // labelgroupBoxVE2
+            // 
+            this.labelgroupBoxVE2.AutoSize = true;
+            this.labelgroupBoxVE2.BackColor = System.Drawing.Color.LightGray;
+            this.labelgroupBoxVE2.ForeColor = System.Drawing.Color.Black;
+            this.labelgroupBoxVE2.Location = new System.Drawing.Point(6, 0);
+            this.labelgroupBoxVE2.Name = "labelgroupBoxVE2";
+            this.labelgroupBoxVE2.Size = new System.Drawing.Size(97, 22);
+            this.labelgroupBoxVE2.TabIndex = 91;
+            this.labelgroupBoxVE2.Text = "simulbr-VE2-2";
             // 
             // labelVE2StartEqt
             // 
@@ -920,13 +945,17 @@
             // 
             // richTextBoxVE2
             // 
+            this.richTextBoxVE2.CausesValidation = false;
+            this.richTextBoxVE2.DetectUrls = false;
             this.richTextBoxVE2.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVE2.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVE2.Name = "richTextBoxVE2";
             this.richTextBoxVE2.ReadOnly = true;
             this.richTextBoxVE2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.richTextBoxVE2.ShortcutsEnabled = false;
             this.richTextBoxVE2.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxVE2.TabIndex = 48;
+            this.richTextBoxVE2.TabStop = false;
             this.richTextBoxVE2.Text = "";
             // 
             // buttonVE2Reconn
@@ -942,6 +971,7 @@
             this.buttonVE2Reconn.TabIndex = 47;
             this.buttonVE2Reconn.Text = "Re Connexion";
             this.buttonVE2Reconn.UseVisualStyleBackColor = false;
+            this.buttonVE2Reconn.Click += new System.EventHandler(this.buttonVE2Reconn_Click);
             // 
             // labelVE2Conn
             // 
@@ -980,6 +1010,7 @@
             this.buttonVE2Reload.TabIndex = 43;
             this.buttonVE2Reload.Text = "Reload XML";
             this.buttonVE2Reload.UseVisualStyleBackColor = false;
+            this.buttonVE2Reload.Click += new System.EventHandler(this.buttonVE2Reload_Click);
             // 
             // labelVE2Eacb
             // 
@@ -1032,6 +1063,17 @@
             this.groupBoxVI2.TabIndex = 44;
             this.groupBoxVI2.TabStop = false;
             this.groupBoxVI2.Text = "simulbr-VI2";
+            // 
+            // labelgroupBoxVI2
+            // 
+            this.labelgroupBoxVI2.AutoSize = true;
+            this.labelgroupBoxVI2.BackColor = System.Drawing.Color.LightGray;
+            this.labelgroupBoxVI2.ForeColor = System.Drawing.Color.Black;
+            this.labelgroupBoxVI2.Location = new System.Drawing.Point(6, 0);
+            this.labelgroupBoxVI2.Name = "labelgroupBoxVI2";
+            this.labelgroupBoxVI2.Size = new System.Drawing.Size(80, 22);
+            this.labelgroupBoxVI2.TabIndex = 90;
+            this.labelgroupBoxVI2.Text = "simulbr-VI2";
             // 
             // labelVI2StartEqt
             // 
@@ -1165,13 +1207,17 @@
             // 
             // richTextBoxVI2
             // 
+            this.richTextBoxVI2.CausesValidation = false;
+            this.richTextBoxVI2.DetectUrls = false;
             this.richTextBoxVI2.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVI2.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVI2.Name = "richTextBoxVI2";
             this.richTextBoxVI2.ReadOnly = true;
             this.richTextBoxVI2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.richTextBoxVI2.ShortcutsEnabled = false;
             this.richTextBoxVI2.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxVI2.TabIndex = 48;
+            this.richTextBoxVI2.TabStop = false;
             this.richTextBoxVI2.Text = "";
             // 
             // buttonVI2Reconn
@@ -1187,6 +1233,7 @@
             this.buttonVI2Reconn.TabIndex = 47;
             this.buttonVI2Reconn.Text = "Re Connexion";
             this.buttonVI2Reconn.UseVisualStyleBackColor = false;
+            this.buttonVI2Reconn.Click += new System.EventHandler(this.buttonVI2Reconn_Click);
             // 
             // labelVI2Conn
             // 
@@ -1225,6 +1272,7 @@
             this.buttonVI2Reload.TabIndex = 43;
             this.buttonVI2Reload.Text = "Reload XML";
             this.buttonVI2Reload.UseVisualStyleBackColor = false;
+            this.buttonVI2Reload.Click += new System.EventHandler(this.buttonVI2Reload_Click);
             // 
             // labelVI2Eacb
             // 
@@ -1283,6 +1331,17 @@
             this.groupBoxVC2.TabIndex = 43;
             this.groupBoxVC2.TabStop = false;
             this.groupBoxVC2.Text = "simulbr-VC2";
+            // 
+            // labelgroupBoxVC2
+            // 
+            this.labelgroupBoxVC2.AutoSize = true;
+            this.labelgroupBoxVC2.BackColor = System.Drawing.Color.LightGray;
+            this.labelgroupBoxVC2.ForeColor = System.Drawing.Color.Black;
+            this.labelgroupBoxVC2.Location = new System.Drawing.Point(6, 0);
+            this.labelgroupBoxVC2.Name = "labelgroupBoxVC2";
+            this.labelgroupBoxVC2.Size = new System.Drawing.Size(84, 22);
+            this.labelgroupBoxVC2.TabIndex = 89;
+            this.labelgroupBoxVC2.Text = "simulbr-VC2";
             // 
             // labelVC2StartEqt
             // 
@@ -1488,13 +1547,17 @@
             // 
             // richTextBoxVC2
             // 
+            this.richTextBoxVC2.CausesValidation = false;
+            this.richTextBoxVC2.DetectUrls = false;
             this.richTextBoxVC2.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVC2.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVC2.Name = "richTextBoxVC2";
             this.richTextBoxVC2.ReadOnly = true;
             this.richTextBoxVC2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.richTextBoxVC2.ShortcutsEnabled = false;
             this.richTextBoxVC2.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxVC2.TabIndex = 48;
+            this.richTextBoxVC2.TabStop = false;
             this.richTextBoxVC2.Text = "";
             // 
             // buttonVC2Reconn
@@ -1510,6 +1573,7 @@
             this.buttonVC2Reconn.TabIndex = 47;
             this.buttonVC2Reconn.Text = "Re Connexion";
             this.buttonVC2Reconn.UseVisualStyleBackColor = false;
+            this.buttonVC2Reconn.Click += new System.EventHandler(this.buttonVC2Reconn_Click);
             // 
             // labelVC2Conn
             // 
@@ -1548,6 +1612,7 @@
             this.buttonVC2Reload.TabIndex = 43;
             this.buttonVC2Reload.Text = "Reload XML";
             this.buttonVC2Reload.UseVisualStyleBackColor = false;
+            this.buttonVC2Reload.Click += new System.EventHandler(this.buttonVC2Reload_Click);
             // 
             // labelVC2Eacb
             // 
@@ -1606,6 +1671,17 @@
             this.groupBoxVC1.TabIndex = 42;
             this.groupBoxVC1.TabStop = false;
             this.groupBoxVC1.Text = "simulbr-VC1";
+            // 
+            // labelgroupBoxVC1
+            // 
+            this.labelgroupBoxVC1.AutoSize = true;
+            this.labelgroupBoxVC1.BackColor = System.Drawing.Color.LightGray;
+            this.labelgroupBoxVC1.ForeColor = System.Drawing.Color.Black;
+            this.labelgroupBoxVC1.Location = new System.Drawing.Point(6, 0);
+            this.labelgroupBoxVC1.Name = "labelgroupBoxVC1";
+            this.labelgroupBoxVC1.Size = new System.Drawing.Size(85, 22);
+            this.labelgroupBoxVC1.TabIndex = 88;
+            this.labelgroupBoxVC1.Text = "simulbr-VC1";
             // 
             // labelVC1StartEqt
             // 
@@ -1811,13 +1887,17 @@
             // 
             // richTextBoxVC1
             // 
+            this.richTextBoxVC1.CausesValidation = false;
+            this.richTextBoxVC1.DetectUrls = false;
             this.richTextBoxVC1.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVC1.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVC1.Name = "richTextBoxVC1";
             this.richTextBoxVC1.ReadOnly = true;
             this.richTextBoxVC1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.richTextBoxVC1.ShortcutsEnabled = false;
             this.richTextBoxVC1.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxVC1.TabIndex = 48;
+            this.richTextBoxVC1.TabStop = false;
             this.richTextBoxVC1.Text = "";
             // 
             // buttonVC1Reconn
@@ -1833,6 +1913,7 @@
             this.buttonVC1Reconn.TabIndex = 47;
             this.buttonVC1Reconn.Text = "Re Connexion";
             this.buttonVC1Reconn.UseVisualStyleBackColor = false;
+            this.buttonVC1Reconn.Click += new System.EventHandler(this.buttonVC1Reconn_Click);
             // 
             // labelVC1Conn
             // 
@@ -1871,6 +1952,7 @@
             this.buttonVC1Reload.TabIndex = 43;
             this.buttonVC1Reload.Text = "Reload XML";
             this.buttonVC1Reload.UseVisualStyleBackColor = false;
+            this.buttonVC1Reload.Click += new System.EventHandler(this.buttonVC1Reload_Click);
             // 
             // labelVC1Eacb
             // 
@@ -1925,6 +2007,17 @@
             this.groupBoxVIU.TabIndex = 41;
             this.groupBoxVIU.TabStop = false;
             this.groupBoxVIU.Text = "simulbr-VIU";
+            // 
+            // labelgroupBoxVIU
+            // 
+            this.labelgroupBoxVIU.AutoSize = true;
+            this.labelgroupBoxVIU.BackColor = System.Drawing.Color.LightGray;
+            this.labelgroupBoxVIU.ForeColor = System.Drawing.Color.Black;
+            this.labelgroupBoxVIU.Location = new System.Drawing.Point(6, 0);
+            this.labelgroupBoxVIU.Name = "labelgroupBoxVIU";
+            this.labelgroupBoxVIU.Size = new System.Drawing.Size(82, 22);
+            this.labelgroupBoxVIU.TabIndex = 87;
+            this.labelgroupBoxVIU.Text = "simulbr-VIU";
             // 
             // labelVIUStartEqt
             // 
@@ -2082,13 +2175,17 @@
             // 
             // richTextBoxVIU
             // 
+            this.richTextBoxVIU.CausesValidation = false;
+            this.richTextBoxVIU.DetectUrls = false;
             this.richTextBoxVIU.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVIU.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVIU.Name = "richTextBoxVIU";
             this.richTextBoxVIU.ReadOnly = true;
             this.richTextBoxVIU.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.richTextBoxVIU.ShortcutsEnabled = false;
             this.richTextBoxVIU.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxVIU.TabIndex = 48;
+            this.richTextBoxVIU.TabStop = false;
             this.richTextBoxVIU.Text = "";
             // 
             // buttonVIUReconn
@@ -2104,6 +2201,7 @@
             this.buttonVIUReconn.TabIndex = 47;
             this.buttonVIUReconn.Text = "Re Connexion";
             this.buttonVIUReconn.UseVisualStyleBackColor = false;
+            this.buttonVIUReconn.Click += new System.EventHandler(this.buttonVIUReconn_Click);
             // 
             // labelVIUConn
             // 
@@ -2142,6 +2240,7 @@
             this.buttonVIUReload.TabIndex = 43;
             this.buttonVIUReload.Text = "Reload XML";
             this.buttonVIUReload.UseVisualStyleBackColor = false;
+            this.buttonVIUReload.Click += new System.EventHandler(this.buttonVIUReload_Click);
             // 
             // labelVIUEacb
             // 
@@ -2204,6 +2303,17 @@
             this.groupBoxVE1.TabIndex = 40;
             this.groupBoxVE1.TabStop = false;
             this.groupBoxVE1.Text = "simulbr-VE1-3";
+            // 
+            // labelgroupBoxVE1
+            // 
+            this.labelgroupBoxVE1.AutoSize = true;
+            this.labelgroupBoxVE1.BackColor = System.Drawing.Color.LightGray;
+            this.labelgroupBoxVE1.ForeColor = System.Drawing.Color.Black;
+            this.labelgroupBoxVE1.Location = new System.Drawing.Point(6, 0);
+            this.labelgroupBoxVE1.Name = "labelgroupBoxVE1";
+            this.labelgroupBoxVE1.Size = new System.Drawing.Size(99, 22);
+            this.labelgroupBoxVE1.TabIndex = 86;
+            this.labelgroupBoxVE1.Text = "simulbr-VE1-3";
             // 
             // labelVE1StartEqt
             // 
@@ -2457,13 +2567,17 @@
             // 
             // richTextBoxVE1
             // 
+            this.richTextBoxVE1.CausesValidation = false;
+            this.richTextBoxVE1.DetectUrls = false;
             this.richTextBoxVE1.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxVE1.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxVE1.Name = "richTextBoxVE1";
             this.richTextBoxVE1.ReadOnly = true;
             this.richTextBoxVE1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.richTextBoxVE1.ShortcutsEnabled = false;
             this.richTextBoxVE1.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxVE1.TabIndex = 48;
+            this.richTextBoxVE1.TabStop = false;
             this.richTextBoxVE1.Text = "";
             // 
             // buttonVE1Reconn
@@ -2479,6 +2593,7 @@
             this.buttonVE1Reconn.TabIndex = 47;
             this.buttonVE1Reconn.Text = "Re Connexion";
             this.buttonVE1Reconn.UseVisualStyleBackColor = false;
+            this.buttonVE1Reconn.Click += new System.EventHandler(this.buttonVE1Reconn_Click);
             // 
             // labelVE1Conn
             // 
@@ -2517,6 +2632,7 @@
             this.buttonVE1Reload.TabIndex = 43;
             this.buttonVE1Reload.Text = "Reload XML";
             this.buttonVE1Reload.UseVisualStyleBackColor = false;
+            this.buttonVE1Reload.Click += new System.EventHandler(this.buttonVE1Reload_Click);
             // 
             // labelVE1Eacb
             // 
@@ -2561,6 +2677,17 @@
             this.groupBoxPUP.TabStop = false;
             this.groupBoxPUP.Text = "simulbr-PUP1";
             // 
+            // labelgroupBoxPUP
+            // 
+            this.labelgroupBoxPUP.AutoSize = true;
+            this.labelgroupBoxPUP.BackColor = System.Drawing.Color.LightGray;
+            this.labelgroupBoxPUP.ForeColor = System.Drawing.Color.Black;
+            this.labelgroupBoxPUP.Location = new System.Drawing.Point(6, 0);
+            this.labelgroupBoxPUP.Name = "labelgroupBoxPUP";
+            this.labelgroupBoxPUP.Size = new System.Drawing.Size(96, 22);
+            this.labelgroupBoxPUP.TabIndex = 50;
+            this.labelgroupBoxPUP.Text = "simulbr-PUP1";
+            // 
             // labelPUPStartEqt
             // 
             this.labelPUPStartEqt.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2573,14 +2700,18 @@
             // 
             // richTextBoxPUP
             // 
+            this.richTextBoxPUP.CausesValidation = false;
+            this.richTextBoxPUP.DetectUrls = false;
             this.richTextBoxPUP.Font = new System.Drawing.Font("Alstom", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxPUP.ForeColor = System.Drawing.Color.Black;
             this.richTextBoxPUP.Location = new System.Drawing.Point(662, 17);
             this.richTextBoxPUP.Name = "richTextBoxPUP";
             this.richTextBoxPUP.ReadOnly = true;
             this.richTextBoxPUP.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.richTextBoxPUP.ShortcutsEnabled = false;
             this.richTextBoxPUP.Size = new System.Drawing.Size(579, 74);
             this.richTextBoxPUP.TabIndex = 48;
+            this.richTextBoxPUP.TabStop = false;
             this.richTextBoxPUP.Text = "";
             // 
             // buttonPUPReconn
@@ -2666,93 +2797,6 @@
             this.tabGeneral.Size = new System.Drawing.Size(1259, 785);
             this.tabGeneral.TabIndex = 1;
             this.tabGeneral.Text = "     Debug       ";
-            // 
-            // labelSUPCB0
-            // 
-            this.labelSUPCB0.Font = new System.Drawing.Font("Alstom", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSUPCB0.Location = new System.Drawing.Point(6, 75);
-            this.labelSUPCB0.Name = "labelSUPCB0";
-            this.labelSUPCB0.Size = new System.Drawing.Size(88, 18);
-            this.labelSUPCB0.TabIndex = 57;
-            this.labelSUPCB0.Text = "ControlBuild:";
-            this.labelSUPCB0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelgroupBoxPUP
-            // 
-            this.labelgroupBoxPUP.AutoSize = true;
-            this.labelgroupBoxPUP.BackColor = System.Drawing.Color.LightGray;
-            this.labelgroupBoxPUP.ForeColor = System.Drawing.Color.Black;
-            this.labelgroupBoxPUP.Location = new System.Drawing.Point(6, 0);
-            this.labelgroupBoxPUP.Name = "labelgroupBoxPUP";
-            this.labelgroupBoxPUP.Size = new System.Drawing.Size(96, 22);
-            this.labelgroupBoxPUP.TabIndex = 50;
-            this.labelgroupBoxPUP.Text = "simulbr-PUP1";
-            // 
-            // labelgroupBoxVE1
-            // 
-            this.labelgroupBoxVE1.AutoSize = true;
-            this.labelgroupBoxVE1.BackColor = System.Drawing.Color.LightGray;
-            this.labelgroupBoxVE1.ForeColor = System.Drawing.Color.Black;
-            this.labelgroupBoxVE1.Location = new System.Drawing.Point(6, 0);
-            this.labelgroupBoxVE1.Name = "labelgroupBoxVE1";
-            this.labelgroupBoxVE1.Size = new System.Drawing.Size(99, 22);
-            this.labelgroupBoxVE1.TabIndex = 86;
-            this.labelgroupBoxVE1.Text = "simulbr-VE1-3";
-            // 
-            // labelgroupBoxVIU
-            // 
-            this.labelgroupBoxVIU.AutoSize = true;
-            this.labelgroupBoxVIU.BackColor = System.Drawing.Color.LightGray;
-            this.labelgroupBoxVIU.ForeColor = System.Drawing.Color.Black;
-            this.labelgroupBoxVIU.Location = new System.Drawing.Point(6, 0);
-            this.labelgroupBoxVIU.Name = "labelgroupBoxVIU";
-            this.labelgroupBoxVIU.Size = new System.Drawing.Size(82, 22);
-            this.labelgroupBoxVIU.TabIndex = 87;
-            this.labelgroupBoxVIU.Text = "simulbr-VIU";
-            // 
-            // labelgroupBoxVC1
-            // 
-            this.labelgroupBoxVC1.AutoSize = true;
-            this.labelgroupBoxVC1.BackColor = System.Drawing.Color.LightGray;
-            this.labelgroupBoxVC1.ForeColor = System.Drawing.Color.Black;
-            this.labelgroupBoxVC1.Location = new System.Drawing.Point(6, 0);
-            this.labelgroupBoxVC1.Name = "labelgroupBoxVC1";
-            this.labelgroupBoxVC1.Size = new System.Drawing.Size(85, 22);
-            this.labelgroupBoxVC1.TabIndex = 88;
-            this.labelgroupBoxVC1.Text = "simulbr-VC1";
-            // 
-            // labelgroupBoxVC2
-            // 
-            this.labelgroupBoxVC2.AutoSize = true;
-            this.labelgroupBoxVC2.BackColor = System.Drawing.Color.LightGray;
-            this.labelgroupBoxVC2.ForeColor = System.Drawing.Color.Black;
-            this.labelgroupBoxVC2.Location = new System.Drawing.Point(6, 0);
-            this.labelgroupBoxVC2.Name = "labelgroupBoxVC2";
-            this.labelgroupBoxVC2.Size = new System.Drawing.Size(84, 22);
-            this.labelgroupBoxVC2.TabIndex = 89;
-            this.labelgroupBoxVC2.Text = "simulbr-VC2";
-            // 
-            // labelgroupBoxVI2
-            // 
-            this.labelgroupBoxVI2.AutoSize = true;
-            this.labelgroupBoxVI2.BackColor = System.Drawing.Color.LightGray;
-            this.labelgroupBoxVI2.ForeColor = System.Drawing.Color.Black;
-            this.labelgroupBoxVI2.Location = new System.Drawing.Point(6, 0);
-            this.labelgroupBoxVI2.Name = "labelgroupBoxVI2";
-            this.labelgroupBoxVI2.Size = new System.Drawing.Size(80, 22);
-            this.labelgroupBoxVI2.TabIndex = 90;
-            this.labelgroupBoxVI2.Text = "simulbr-VI2";
-            // 
-            // labelgroupBoxVE2
-            // 
-            this.labelgroupBoxVE2.AutoSize = true;
-            this.labelgroupBoxVE2.BackColor = System.Drawing.Color.LightGray;
-            this.labelgroupBoxVE2.ForeColor = System.Drawing.Color.Black;
-            this.labelgroupBoxVE2.Location = new System.Drawing.Point(6, 0);
-            this.labelgroupBoxVE2.Name = "labelgroupBoxVE2";
-            this.labelgroupBoxVE2.Size = new System.Drawing.Size(97, 22);
-            this.labelgroupBoxVE2.TabIndex = 91;
-            this.labelgroupBoxVE2.Text = "simulbr-VE2-2";
             // 
             // Form1
             // 

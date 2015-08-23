@@ -21,10 +21,10 @@ namespace LbrmPP_SupervisionMultiTB
     public partial class Form1 : Form
     {
         //private BackgroundWorker bgWorkerCB;
-        private Color myColorDefault = System.Drawing.Color.Black;
-        private Color myColorRed = System.Drawing.Color.Red;
-        private Color myColorGreen = System.Drawing.Color.Green;
-        private Color myColorOrange = System.Drawing.Color.Orange;
+        readonly Color myColorDefault = System.Drawing.Color.Black;
+        readonly Color myColorRed = System.Drawing.Color.Red;
+        readonly Color myColorGreen = System.Drawing.Color.Green;
+        readonly Color myColorOrange = System.Drawing.Color.Orange;
         private int bgWorkerCB_Action = 0;
 
         public struct TestBench
@@ -41,6 +41,7 @@ namespace LbrmPP_SupervisionMultiTB
             public Button buttonReconn;
             public Button buttonReload;
             public Button buttonReinit;
+            public RichTextBox richtextbox;
         }
         private TestBench myTB_PUP, myTB_VE1, myTB_VIU, myTB_VC1, myTB_VC2, myTB_VI2, myTB_VE2, myTB_VUE3D, myTB_BISTD, myTB_SUP;
        
@@ -68,6 +69,7 @@ namespace LbrmPP_SupervisionMultiTB
             myTB_PUP.labelgroupBox = labelgroupBoxPUP;
             myTB_PUP.labelHard = labelPUPHard;
             myTB_PUP.labelStartEqt = labelPUPStartEqt;
+            myTB_PUP.richtextbox = richTextBoxPUP;
 
             myTB_VE1.Worker = new BackgroundWorker();
             myTB_VE1.Worker.WorkerReportsProgress = true;
@@ -82,7 +84,82 @@ namespace LbrmPP_SupervisionMultiTB
             myTB_VE1.labelgroupBox = labelgroupBoxVE1;
             myTB_VE1.labelHard = labelVE1Hard;
             myTB_VE1.labelStartEqt = labelVE1StartEqt;
+            myTB_VE1.richtextbox = richTextBoxVE1;
+            
+            myTB_VIU.Worker = new BackgroundWorker();
+            myTB_VIU.Worker.WorkerReportsProgress = true;
+            myTB_VIU.Worker.DoWork += bgWorkerTCP_Process;
+            myTB_VIU.Worker.ProgressChanged += bgWorkerTCP_ProgressChanged;
+            myTB_VIU.Worker.RunWorkerCompleted += bgWorkerTCP_RunWorkerCompleted;
+            myTB_VIU.buttonReconn = buttonVIUReconn;
+            myTB_VIU.buttonReinit = buttonVIUReinit;
+            myTB_VIU.buttonReload = buttonVIUReload;
+            myTB_VIU.labelConn = labelVIUConn;
+            myTB_VIU.labelEacb = labelVIUEacb;
+            myTB_VIU.labelgroupBox = labelgroupBoxVIU;
+            myTB_VIU.labelHard = labelVIUHard;
+            myTB_VIU.labelStartEqt = labelVIUStartEqt;
+            myTB_VIU.richtextbox = richTextBoxVIU;
+            
+            myTB_VC1.Worker = new BackgroundWorker();
+            myTB_VC1.Worker.WorkerReportsProgress = true;
+            myTB_VC1.Worker.DoWork += bgWorkerTCP_Process;
+            myTB_VC1.Worker.ProgressChanged += bgWorkerTCP_ProgressChanged;
+            myTB_VC1.Worker.RunWorkerCompleted += bgWorkerTCP_RunWorkerCompleted;
+            myTB_VC1.buttonReconn = buttonVC1Reconn;
+            myTB_VC1.buttonReinit = buttonVC1Reinit;
+            myTB_VC1.buttonReload = buttonVC1Reload;
+            myTB_VC1.labelConn = labelVC1Conn;
+            myTB_VC1.labelEacb = labelVC1Eacb;
+            myTB_VC1.labelgroupBox = labelgroupBoxVC1;
+            myTB_VC1.labelHard = labelVC1Hard;
+            myTB_VC1.labelStartEqt = labelVC1StartEqt;
+            myTB_VC1.richtextbox = richTextBoxVC1;
 
+            myTB_VC2.Worker = new BackgroundWorker();
+            myTB_VC2.Worker.WorkerReportsProgress = true;
+            myTB_VC2.Worker.DoWork += bgWorkerTCP_Process;
+            myTB_VC2.Worker.ProgressChanged += bgWorkerTCP_ProgressChanged;
+            myTB_VC2.Worker.RunWorkerCompleted += bgWorkerTCP_RunWorkerCompleted;
+            myTB_VC2.buttonReconn = buttonVC2Reconn;
+            myTB_VC2.buttonReinit = buttonVC2Reinit;
+            myTB_VC2.buttonReload = buttonVC2Reload;
+            myTB_VC2.labelConn = labelVC2Conn;
+            myTB_VC2.labelEacb = labelVC2Eacb;
+            myTB_VC2.labelgroupBox = labelgroupBoxVC2;
+            myTB_VC2.labelHard = labelVC2Hard;
+            myTB_VC2.labelStartEqt = labelVC2StartEqt;
+            myTB_VC2.richtextbox = richTextBoxVC2;
+
+            myTB_VI2.Worker = new BackgroundWorker();
+            myTB_VI2.Worker.WorkerReportsProgress = true;
+            myTB_VI2.Worker.DoWork += bgWorkerTCP_Process;
+            myTB_VI2.Worker.ProgressChanged += bgWorkerTCP_ProgressChanged;
+            myTB_VI2.Worker.RunWorkerCompleted += bgWorkerTCP_RunWorkerCompleted;
+            myTB_VI2.buttonReconn = buttonVI2Reconn;
+            myTB_VI2.buttonReinit = buttonVI2Reinit;
+            myTB_VI2.buttonReload = buttonVI2Reload;
+            myTB_VI2.labelConn = labelVI2Conn;
+            myTB_VI2.labelEacb = labelVI2Eacb;
+            myTB_VI2.labelgroupBox = labelgroupBoxVI2;
+            myTB_VI2.labelHard = labelVI2Hard;
+            myTB_VI2.labelStartEqt = labelVI2StartEqt;
+            myTB_VI2.richtextbox = richTextBoxVI2;
+
+            myTB_VE2.Worker = new BackgroundWorker();
+            myTB_VE2.Worker.WorkerReportsProgress = true;
+            myTB_VE2.Worker.DoWork += bgWorkerTCP_Process;
+            myTB_VE2.Worker.ProgressChanged += bgWorkerTCP_ProgressChanged;
+            myTB_VE2.Worker.RunWorkerCompleted += bgWorkerTCP_RunWorkerCompleted;
+            myTB_VE2.buttonReconn = buttonVE2Reconn;
+            myTB_VE2.buttonReinit = buttonVE2Reinit;
+            myTB_VE2.buttonReload = buttonVE2Reload;
+            myTB_VE2.labelConn = labelVE2Conn;
+            myTB_VE2.labelEacb = labelVE2Eacb;
+            myTB_VE2.labelgroupBox = labelgroupBoxVE2;
+            myTB_VE2.labelHard = labelVE2Hard;
+            myTB_VE2.labelStartEqt = labelVE2StartEqt;
+            myTB_VE2.richtextbox = richTextBoxVE2;
 
             try
             {
@@ -119,44 +196,25 @@ namespace LbrmPP_SupervisionMultiTB
             tabControl1.SelectedTab = tabSupTB;
 
             if (checkBoxCB.Checked) myTB_SUP.Worker.RunWorkerAsync();
+            else Update_RichTextBox(Color.Blue, richTextBoxSUP, "Partie ControlBuild désactivé (cf onglet \"Configuration\")");
 
             myTB_PUP.Worker.RunWorkerAsync(myTB_PUP);
             myTB_VE1.Worker.RunWorkerAsync(myTB_VE1);
+            myTB_VIU.Worker.RunWorkerAsync(myTB_VIU);
+            myTB_VC1.Worker.RunWorkerAsync(myTB_VC1);
+            myTB_VC2.Worker.RunWorkerAsync(myTB_VC2);
+            myTB_VI2.Worker.RunWorkerAsync(myTB_VI2);
+            myTB_VE2.Worker.RunWorkerAsync(myTB_VE2);
         }
 
-        public void Update_RichTextBox(Color msgColor, string RichTextBox, string Msg)
+        public void Update_RichTextBox(Color msgColor, RichTextBox richtextbox, string Msg)
         {
-            RichTextBox myRichTextBox = null;
             CultureInfo culture = new CultureInfo("en-gb");
-            string timeStamp = DateTime.Now.ToString("HHmmss", culture);
-
-            switch (RichTextBox){
-                case "PUP": myRichTextBox = richTextBoxPUP;
-                    break;
-                case "VE1": myRichTextBox = richTextBoxVE1;
-                    break;
-                case "VIU": myRichTextBox = richTextBoxVIU;
-                    break;
-                case "VC1": myRichTextBox = richTextBoxVC1;
-                    break;
-                case "VC2": myRichTextBox = richTextBoxVC2;
-                    break;
-                case "VI2": myRichTextBox = richTextBoxVI2;
-                    break;
-                case "VE2": myRichTextBox = richTextBoxVE2;
-                    break;
-                default: myRichTextBox = richTextBoxSUP;
-                    break;
-            }
-
-            Invoke(new Action(() =>
-            {
-                myRichTextBox.SelectionColor = msgColor;
-                myRichTextBox.AppendText(timeStamp + " " + Msg + "\n");
-                myRichTextBox.SelectionStart = richTextBoxPUP.Text.Length;
-                myRichTextBox.ScrollToCaret();
-            }
-            ));
+            string timeStamp = DateTime.Now.ToString("HH:mm:ss", culture);
+            richtextbox.SelectionColor = msgColor;
+            richtextbox.AppendText(timeStamp + " " + Msg + "\n");
+            richtextbox.SelectionStart = richTextBoxPUP.Text.Length;
+            richtextbox.ScrollToCaret();
         }
 
         #region bgWorkerCB
@@ -178,7 +236,7 @@ namespace LbrmPP_SupervisionMultiTB
             CBCOMComponent myCBComponent = null;
             CBCOMInstanciatedScenario myCBScenario = null;
 
-            Update_RichTextBox(myColorOrange, "SUP", "## ControlBuild: Lancement de l'application ControlBuild (Monitor)...");
+            Update_RichTextBox(myColorOrange, richTextBoxSUP, "## ControlBuild: Lancement de l'application ControlBuild (Monitor)...");
             Process.Start(@"C:\Pack\ControlBuild\tooldir\tool.c\bin\msw32\ControlBuild.exe", "-monitor");
             Thread.Sleep(15000);
             MessageBox.Show("Valider une fois qu'une instance visible de ControlBuild Monitor est lancée.", "Laborame Supervision QDG", MessageBoxButtons.OK);
@@ -209,7 +267,7 @@ namespace LbrmPP_SupervisionMultiTB
                catch (Exception)
                {
                    canIContinue = false;
-                   Update_RichTextBox(myColorRed, "SUP", "## ControlBuild: Application mal générée. Impossible de continuer.");
+                   Update_RichTextBox(myColorRed, richTextBoxSUP, "## ControlBuild: Application mal générée. Impossible de continuer.");
                }
 
             }
@@ -226,7 +284,7 @@ namespace LbrmPP_SupervisionMultiTB
                 catch(Exception)
                 {
                     canIContinue = false;
-                    Update_RichTextBox(myColorRed, "SUP", "## ControlBuild: Application mal générée. Impossible de continuer.");
+                    Update_RichTextBox(myColorRed, richTextBoxSUP, "## ControlBuild: Application mal générée. Impossible de continuer.");
                 }
             }
             else { if (canIContinue) bgWorker.ReportProgress(-4); canIContinue = false; }
@@ -297,25 +355,25 @@ namespace LbrmPP_SupervisionMultiTB
                     break;
                 case -1:
                     Invoke(new Action(() => { labelSUPCB1.ForeColor = myColorRed; }));
-                    Update_RichTextBox(myColorRed, "SUP", "## ControlBuild: Erreur à l'initialisation de l'objet CBCOMServer. Problème de dépendance ou incohérence avec la version CB installée");
+                    Update_RichTextBox(myColorRed, richTextBoxSUP, "## ControlBuild: Erreur à l'initialisation de l'objet CBCOMServer. Problème de dépendance ou incohérence avec la version CB installée");
                     break;
                 case -2:
                     Invoke(new Action(() => { labelSUPCB1.ForeColor = myColorRed; }));
-                    Update_RichTextBox(myColorRed, "PUP", "## ControlBuild: Erreur à l'ouverture du projet ControlBuild.");
+                    Update_RichTextBox(myColorRed, richTextBoxSUP, "## ControlBuild: Erreur à l'ouverture du projet ControlBuild.");
                     break;
                 case 3:
                     Invoke(new Action(() => { labelSUPCB1.ForeColor = myColorGreen; }));
                     break;
                 case -3:
                     Invoke(new Action(() => { labelSUPCB1.ForeColor = myColorRed; }));
-                    Update_RichTextBox(myColorRed, "SUP", "## ControlBuild: Erreur à l'ouverture de l'application.");
+                    Update_RichTextBox(myColorRed, richTextBoxSUP, "## ControlBuild: Erreur à l'ouverture de l'application.");
                     break;
                 case 4:
                     Invoke(new Action(() => { labelSUPCB2.ForeColor = myColorOrange; }));
                     break;
                 case -4:
                     Invoke(new Action(() => { labelSUPCB2.ForeColor = myColorRed; }));
-                    Update_RichTextBox(myColorRed, "SUP", "## ControlBuild: Erreur à l'ouverture de la vue Fonctionnel.");
+                    Update_RichTextBox(myColorRed, richTextBoxSUP, "## ControlBuild: Erreur à l'ouverture de la vue Fonctionnel.");
                     break;
                 case 5:
                     Invoke(new Action(() => { labelSUPCB2.ForeColor = myColorGreen; }));
@@ -324,11 +382,11 @@ namespace LbrmPP_SupervisionMultiTB
                     break;
                 case -5:
                     Invoke(new Action(() => { labelSUPCB2.ForeColor = myColorRed; }));
-                    Update_RichTextBox(myColorRed, "SUP", "## ControlBuild: Erreur à l'ouverture de la conf.");
+                    Update_RichTextBox(myColorRed, richTextBoxSUP, "## ControlBuild: Erreur à l'ouverture de la conf.");
                     break;
                 case -6:
                     Invoke(new Action(() => { labelSUPCB3.ForeColor = myColorRed; }));
-                    Update_RichTextBox(myColorRed, "SUP", "## ControlBuild: Erreur sur l'un des objets Target (tTB_PUP_sil0, tTB_VE1_sil0, tTB_VIU_sil0, tTB_VC1_sil0, tTB_VC2_sil0, tTB_VI2_sil0, tTB_VE2_sil0).");
+                    Update_RichTextBox(myColorRed, richTextBoxSUP, "## ControlBuild: Erreur sur l'un des objets Target (tTB_PUP_sil0, tTB_VE1_sil0, tTB_VIU_sil0, tTB_VC1_sil0, tTB_VC2_sil0, tTB_VI2_sil0, tTB_VE2_sil0).");
                     break;
                 case 7:
                     Invoke(new Action(() => { labelSUPCB3.ForeColor = myColorGreen; }));
@@ -344,7 +402,7 @@ namespace LbrmPP_SupervisionMultiTB
 
         void bgWorkerCB_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Update_RichTextBox(myColorRed, "SUP", "## Fin du Worker.");
+            Update_RichTextBox(myColorRed, richTextBoxSUP, "## Fin du Worker.");
             if (e != null && e.Cancelled)
             {
                 startTheWorker(myTB_SUP.Worker);
@@ -390,11 +448,11 @@ namespace LbrmPP_SupervisionMultiTB
                         testBench.TCP.Action = 0;
                         break;
                 }
+                Thread.Sleep(10);
             }
 
             if (testBench.TCP.Status > 0)
             {
-                //Thread.Sleep(3000);
                 testBench.TCP.Close();
             }
         }
@@ -403,6 +461,15 @@ namespace LbrmPP_SupervisionMultiTB
         {
             //Status : 2 = End of Init; 3 = End of HARD.xml; 4 = End of EACB.xml; 5 = End of StartEqt
             TestBench testBench = (TestBench)e.UserState;
+
+            if (testBench.ID == "PUP") Invoke(new Action(() => { myTB_PUP = testBench; }));
+            if (testBench.ID == "VE1") Invoke(new Action(() => { myTB_VE1 = testBench; }));
+            if (testBench.ID == "VIU") Invoke(new Action(() => { myTB_VIU = testBench; }));
+            if (testBench.ID == "VC1") Invoke(new Action(() => { myTB_VC1 = testBench; }));
+            if (testBench.ID == "VC2") Invoke(new Action(() => { myTB_VC2 = testBench; }));
+            if (testBench.ID == "VI2") Invoke(new Action(() => { myTB_VI2 = testBench; }));
+            if (testBench.ID == "VE2") Invoke(new Action(() => { myTB_VE2 = testBench; }));
+                    
 
             switch (e.ProgressPercentage)
             {
@@ -420,8 +487,7 @@ namespace LbrmPP_SupervisionMultiTB
                     break;
                 case -1:
                     Invoke(new Action(() => { testBench.labelConn.ForeColor = myColorRed; }));
-                    Update_RichTextBox(myColorRed, testBench.ID, "## Probleme de connexion. Vérifier que TB_RP_Server est démarré sur le PC distant (" + testBench.IP + ").");
-                    Update_RichTextBox(myColorRed, testBench.ID, "## Utiliser le bouton 'Reconnexion' pour retenter, puis 'Reload XML'.");
+                    Update_RichTextBox(myColorRed, testBench.richtextbox, "## Probleme de connexion. Vérifier que TB_RP_Server est démarré sur le PC distant (" + testBench.IP + "). Utiliser le bouton 'Reconnexion' pour retenter, puis 'Reload XML'.");
                     Invoke(new Action(() => { testBench.buttonReconn.Enabled = true; }));
                     break;
                 case 2 :
@@ -444,7 +510,7 @@ namespace LbrmPP_SupervisionMultiTB
                 case 5:
                     Invoke(new Action(() => { testBench.labelStartEqt.ForeColor = myColorGreen; }));
                     Invoke(new Action(() => { testBench.buttonReload.Enabled = true; }));
-                    Update_RichTextBox(myColorGreen, testBench.ID, "== Configuration terminée.");
+                    Update_RichTextBox(myColorGreen, testBench.richtextbox, "== Configuration terminée.");
                     Invoke(new Action(() => { testBench.labelgroupBox.ForeColor = myColorGreen; }));
                     break;
                 case -5:
@@ -484,16 +550,6 @@ namespace LbrmPP_SupervisionMultiTB
         }
         #endregion
 
-        private void buttonPUPReconn_Click(object sender, EventArgs e)
-        {
-            myTB_PUP.TCP.Action = 1;
-        }
-
-        private void buttonPUPReload_Click(object sender, EventArgs e)
-        {
-            myTB_PUP.TCP.Action = 2;
-        }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
         }
@@ -521,6 +577,76 @@ namespace LbrmPP_SupervisionMultiTB
             LbrmPP_SupervisionMultiTB.Properties.Settings.Default["CBTaskName"] = textBox_CBTaskName.Text.ToString();
             LbrmPP_SupervisionMultiTB.Properties.Settings.Default["PathXML"] = textBox_PathXML.Text.ToString();
             LbrmPP_SupervisionMultiTB.Properties.Settings.Default.Save();
+        }
+
+        private void buttonPUPReconn_Click(object sender, EventArgs e)
+        {
+            myTB_PUP.TCP.Action = 1;
+        }
+
+        private void buttonPUPReload_Click(object sender, EventArgs e)
+        {
+            myTB_PUP.TCP.Action = 2;
+        }
+        
+        private void buttonVE1Reconn_Click(object sender, EventArgs e)
+        {
+            myTB_VE1.TCP.Action = 1;
+        }
+
+        private void buttonVE1Reload_Click(object sender, EventArgs e)
+        {
+            myTB_VE1.TCP.Action = 2;
+        }
+
+        private void buttonVIUReconn_Click(object sender, EventArgs e)
+        {
+            myTB_VIU.TCP.Action = 1;
+        }
+
+        private void buttonVIUReload_Click(object sender, EventArgs e)
+        {
+            myTB_VIU.TCP.Action = 2;
+        }
+
+        private void buttonVC1Reconn_Click(object sender, EventArgs e)
+        {
+            myTB_VC1.TCP.Action = 1;
+        }
+
+        private void buttonVC1Reload_Click(object sender, EventArgs e)
+        {
+            myTB_VC1.TCP.Action = 2;
+        }
+
+        private void buttonVC2Reconn_Click(object sender, EventArgs e)
+        {
+            myTB_VC2.TCP.Action = 1;
+        }
+
+        private void buttonVC2Reload_Click(object sender, EventArgs e)
+        {
+            myTB_VC2.TCP.Action = 2;
+        }
+
+        private void buttonVI2Reconn_Click(object sender, EventArgs e)
+        {
+            myTB_VI2.TCP.Action = 1;
+        }
+
+        private void buttonVI2Reload_Click(object sender, EventArgs e)
+        {
+            myTB_VI2.TCP.Action = 2;
+        }
+
+        private void buttonVE2Reconn_Click(object sender, EventArgs e)
+        {
+            myTB_VE2.TCP.Action = 1;
+        }
+
+        private void buttonVE2Reload_Click(object sender, EventArgs e)
+        {
+            myTB_VE2.TCP.Action = 2;
         }
     }
 }

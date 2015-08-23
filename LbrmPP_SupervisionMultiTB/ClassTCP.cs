@@ -13,10 +13,7 @@ namespace LbrmPP_SupervisionMultiTB
     public class ClassTCP
     {
         protected NetworkStream _stream;
-//        protected string _strPC;
-//        protected string _IPAddress;
         protected TcpClient _connection;
-//        protected BackgroundWorker _bgWorker;
         protected Form1.TestBench _testBench;
         protected ClassTCP connection;
         protected Exception exception;
@@ -51,6 +48,7 @@ namespace LbrmPP_SupervisionMultiTB
                 if ((value >= -100) && (value <= 100))
                 {
                     _Status = value;
+                    _testBench.TCP = this;
                     if (_testBench.Worker != null)
                     {
                         _testBench.Worker.ReportProgress(_Status, _testBench);
@@ -146,13 +144,13 @@ namespace LbrmPP_SupervisionMultiTB
 
             myWriteBuffer = Encoding.ASCII.GetBytes(strToSend);
 
-            _frm.Update_RichTextBox(Color.LightSeaGreen, _testBench.ID, ">>" + strToSend);
+            _frm.Update_RichTextBox(Color.LightSeaGreen, _testBench.richtextbox, ">>" + strToSend);
             _stream.Write(myWriteBuffer, 0, myWriteBuffer.Length);
             do
             {
                 numberOfBytesRead = _stream.Read(myReadBuffer, 0, myReadBuffer.Length);
                 strRcv = Encoding.ASCII.GetString(myReadBuffer, 0, numberOfBytesRead);
-                _frm.Update_RichTextBox(Color.DarkSlateBlue, _testBench.ID, "<<" + strRcv);
+                _frm.Update_RichTextBox(Color.DarkSlateBlue, _testBench.richtextbox, "<<" + strRcv);
             } while (String.Compare(strRcv, "HB") == 0);
 
             return strRcv;
