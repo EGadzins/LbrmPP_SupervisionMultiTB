@@ -13,22 +13,22 @@ namespace LbrmPP_SupervisionMultiTB
     public class ClassTCP
     {
         protected NetworkStream _stream;
-        protected string _strPC;
-        protected string _IPAddress;
+//        protected string _strPC;
+//        protected string _IPAddress;
         protected TcpClient _connection;
-        protected BackgroundWorker _bgWorker;
+//        protected BackgroundWorker _bgWorker;
+        protected Form1.TestBench _testBench;
         protected ClassTCP connection;
         protected Exception exception;
         protected Form1 _frm = null;
         private int _Status = 0;
         private int _Action = 0;
 
-        public ClassTCP(string IPAddress, string strPC, BackgroundWorker bgWorker, Form1 f)
+//        public ClassTCP(string IPAddress, string strPC, BackgroundWorker bgWorker, Form1 f)
+        public ClassTCP(Form1.TestBench testBench, Form1 f)
         {
-            _IPAddress = IPAddress;
-            _bgWorker = bgWorker;
+            _testBench = testBench;
             _frm = f;
-            _strPC = strPC;
 
             Open();
             Action = 0; 
@@ -51,9 +51,9 @@ namespace LbrmPP_SupervisionMultiTB
                 if ((value >= -100) && (value <= 100))
                 {
                     _Status = value;
-                    if (_bgWorker != null)
+                    if (_testBench.Worker != null)
                     {
-                        _bgWorker.ReportProgress(_Status);
+                        _testBench.Worker.ReportProgress(_Status, _testBench);
                     }
                     Thread.Sleep(100);
                 }
@@ -146,13 +146,13 @@ namespace LbrmPP_SupervisionMultiTB
 
             myWriteBuffer = Encoding.ASCII.GetBytes(strToSend);
 
-            _frm.Update_RichTextBox(Color.LightSeaGreen, _strPC, ">>"+strToSend);
+            _frm.Update_RichTextBox(Color.LightSeaGreen, _testBench.ID, ">>" + strToSend);
             _stream.Write(myWriteBuffer, 0, myWriteBuffer.Length);
             do
             {
                 numberOfBytesRead = _stream.Read(myReadBuffer, 0, myReadBuffer.Length);
                 strRcv = Encoding.ASCII.GetString(myReadBuffer, 0, numberOfBytesRead);
-                _frm.Update_RichTextBox(Color.DarkSlateBlue, _strPC, "<<"+strRcv);
+                _frm.Update_RichTextBox(Color.DarkSlateBlue, _testBench.ID, "<<" + strRcv);
             } while (String.Compare(strRcv, "HB") == 0);
 
             return strRcv;
@@ -160,7 +160,7 @@ namespace LbrmPP_SupervisionMultiTB
 
         private void Open()
         {
-            _connection = new TcpClientWithTimeout(_IPAddress, 5555, 5000).Connect();  // 5s de timetout
+            _connection = new TcpClientWithTimeout(_testBench.IP, 5555, 5000).Connect();  // 5s de timetout
             if (_connection != null)
             {
                 _stream = _connection.GetStream();

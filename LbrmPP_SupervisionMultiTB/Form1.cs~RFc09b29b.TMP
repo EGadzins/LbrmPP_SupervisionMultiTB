@@ -18,70 +18,47 @@ using CBCOMServer;
 namespace LbrmPP_SupervisionMultiTB
 {
     
-    public partial class Form1 : Form
+   public partial class Form1 : Form
     {
-        //private BackgroundWorker bgWorkerCB;
-        private Color myColorDefault = System.Drawing.Color.Black;
-        private Color myColorRed = System.Drawing.Color.Red;
-        private Color myColorGreen = System.Drawing.Color.Green;
-        private Color myColorOrange = System.Drawing.Color.Orange;
-        private int bgWorkerCB_Action = 0;
 
-        public struct TestBench
-        {
-            public BackgroundWorker Worker;
-            public ClassTCP TCP;
-            public string IP;
-            public string ID;
-            public Label labelConn;
-            public Label labelHard;
-            public Label labelEacb;
-            public Label labelStartEqt;
-            public Label labelgroupBox;
-            public Button buttonReconn;
-            public Button buttonReload;
-            public Button buttonReinit;
-        }
-        private TestBench myTB_PUP, myTB_VE1, myTB_VIU, myTB_VC1, myTB_VC2, myTB_VI2, myTB_VE2, myTB_VUE3D, myTB_BISTD, myTB_SUP;
-       
-        public Form1()
+       private BackgroundWorker bgWorkerCB;
+       //private BackgroundWorker bgWorkerTCP_PUP, bgWorkerTCP_VE1, bgWorkerTCP_VIU, bgWorkerTCP_VC1, bgWorkerTCP_VC2, bgWorkerTCP_VI2, bgWorkerTCP_VE2, bgWorkerTCP_VUE3D, bgWorkerTCP_BISTD;
+       private ClassTCP TCPPUP;
+       private Color myColorDefault = System.Drawing.Color.Black;
+       private Color myColorRed = System.Drawing.Color.Red;
+       private Color myColorGreen = System.Drawing.Color.Green;
+       private Color myColorOrange = System.Drawing.Color.Orange;
+       private int bgWorkerCB_Action = 0;
+       struct TestBench
+       {
+           public string IP;
+       }
+       private TestBench myTB_PUP, myTB_VE1, myTB_VIU, myTB_VC1, myTB_VC2, myTB_VI2, myTB_VE2, myTB_VUE3D, myTB_BISTD;
+
+       struct bgWorkerTCP
+       {
+           public BackgroundWorker Worker;
+           public string IP;
+           public  string ID;
+       }
+       private bgWorkerTCP bgWorkerTCP_PUP, bgWorkerTCP_VE1, bgWorkerTCP_VIU, bgWorkerTCP_VC1, bgWorkerTCP_VC2, bgWorkerTCP_VI2, bgWorkerTCP_VE2, bgWorkerTCP_VUE3D, bgWorkerTCP_BISTD;
+
+       public Form1()
         {
             InitializeComponent();
 
-            myTB_SUP.Worker = new BackgroundWorker();
-            myTB_SUP.Worker.WorkerReportsProgress = true;
-            myTB_SUP.Worker.WorkerSupportsCancellation = true;
-            myTB_SUP.Worker.DoWork += bgWorkerCB_Process;
-            myTB_SUP.Worker.ProgressChanged += bgWorkerCB_ProgressChanged;
-            myTB_SUP.Worker.RunWorkerCompleted += bgWorkerCB_RunWorkerCompleted;
+            bgWorkerCB = new BackgroundWorker();
+            bgWorkerCB.WorkerReportsProgress = true;
+            bgWorkerCB.WorkerSupportsCancellation = true;
+            bgWorkerCB.DoWork += bgWorkerCB_Process;
+            bgWorkerCB.ProgressChanged += bgWorkerCB_ProgressChanged;
+            bgWorkerCB.RunWorkerCompleted += bgWorkerCB_RunWorkerCompleted;
 
-            myTB_PUP.Worker = new BackgroundWorker();
-            myTB_PUP.Worker.WorkerReportsProgress = true;
-            myTB_PUP.Worker.DoWork += bgWorkerTCP_Process;
-            myTB_PUP.Worker.ProgressChanged += bgWorkerTCP_ProgressChanged;
-            myTB_PUP.Worker.RunWorkerCompleted += bgWorkerTCP_RunWorkerCompleted;
-            myTB_PUP.buttonReconn = buttonPUPReconn;
-            myTB_PUP.buttonReinit = buttonPUPReinit;
-            myTB_PUP.buttonReload = buttonPUPReload;
-            myTB_PUP.labelConn = labelPUPConn;
-            myTB_PUP.labelEacb = labelPUPEacb;
-            myTB_PUP.labelgroupBox = labelgroupBoxPUP;
-            myTB_PUP.labelHard = labelPUPHard;
-            myTB_PUP.labelStartEqt = labelPUPStartEqt;
-
-            myTB_VE1.Worker = new BackgroundWorker();
-            myTB_VE1.Worker.WorkerReportsProgress = true;
-            myTB_VE1.Worker.DoWork += bgWorkerTCP_Process;
-            myTB_VE1.Worker.ProgressChanged += bgWorkerTCP_ProgressChanged;
-            myTB_VE1.Worker.RunWorkerCompleted += bgWorkerTCP_RunWorkerCompleted;
-            myTB_VE1.buttonReconn = buttonVE1Reconn;
-            myTB_VE1.buttonReinit = buttonVE1Reinit;
-            myTB_VE1.buttonReload = buttonVE1Reload;
-            myTB_VE1.labelConn = labelVE1Conn;
-            myTB_VE1.labelEacb = labelVE1Eacb;
-            myTB_VE1.labelgroupBox = labelgroupBoxVE1;
-            myTB_VE1.labelHard = labelVE1Hard;
-            myTB_VE1.labelStartEqt = labelVE1StartEqt;
+            bgWorkerTCP_PUP.Worker = new BackgroundWorker();
+            bgWorkerTCP_PUP.Worker.WorkerReportsProgress = true;
+            bgWorkerTCP_PUP.Worker.DoWork += bgWorkerTCP_Process;
+            bgWorkerTCP_PUP.Worker.ProgressChanged += bgWorkerTCP_ProgressChanged;
+            bgWorkerTCP_PUP.Worker.RunWorkerCompleted += bgWorkerTCP_RunWorkerCompleted;
 
 
             try
@@ -102,15 +79,6 @@ namespace LbrmPP_SupervisionMultiTB
                 myTB_BISTD.IP = LbrmPP_SupervisionMultiTB.Properties.Settings.Default["IP_SimuBiStd"].ToString();
             }
             catch { }
-            myTB_PUP.ID = "PUP";
-            myTB_VE1.ID = "VE1";
-            myTB_VIU.ID = "VIU";
-            myTB_VC1.ID = "VC1";
-            myTB_VC2.ID = "VC2";
-            myTB_VI2.ID = "VI2";
-            myTB_VE2.ID = "VE2";
-            myTB_VUE3D.ID = "VUE3D";
-            myTB_BISTD.ID = "BISTD";
         }
 
         private void btnStartSup_Click(object sender, EventArgs e)
@@ -118,10 +86,12 @@ namespace LbrmPP_SupervisionMultiTB
             btnStartSup.Enabled = false;
             tabControl1.SelectedTab = tabSupTB;
 
-            if (checkBoxCB.Checked) myTB_SUP.Worker.RunWorkerAsync();
+            if (checkBoxCB.Checked) bgWorkerCB.RunWorkerAsync();
 
-            myTB_PUP.Worker.RunWorkerAsync(myTB_PUP);
-            myTB_VE1.Worker.RunWorkerAsync(myTB_VE1);
+            //string[] ParamTCP = { "127.0.0.1", "PUP" }; // IP, IDentifiant à 3 lettres
+            bgWorkerTCP_PUP.IP = "127.0.0.1";
+            bgWorkerTCP_PUP.ID = "PUP" ;
+            bgWorkerTCP_PUP.Worker.RunWorkerAsync(bgWorkerTCP_PUP);
         }
 
         public void Update_RichTextBox(Color msgColor, string RichTextBox, string Msg)
@@ -188,14 +158,14 @@ namespace LbrmPP_SupervisionMultiTB
             {
                 //MessageBox.Show(":)");
                 bgWorker.ReportProgress(1);
-                myCBProject = myCB.OpenProject(textBox_CBProjectName.Text, textBox_PathCB.Text);
+                myCBProject = myCB.OpenProject("CP_Laborame.cbp", @"C:\REGIOLIS\CP_Laborame3");
             }
             else { if (canIContinue) bgWorker.ReportProgress(-1); canIContinue = false; }
 
             if (myCBProject != null && canIContinue)
             {
                 bgWorker.ReportProgress(2);
-                myCBApplication = myCBProject.OpenApplication(textBox_CBApplicationName.Text);
+                myCBApplication = myCBProject.OpenApplication("cp_laborame");
             }
             else { if (canIContinue) bgWorker.ReportProgress(-2); canIContinue = false; }
 
@@ -204,9 +174,9 @@ namespace LbrmPP_SupervisionMultiTB
                bgWorker.ReportProgress(3);
                try
                {
-                   myCBFunctionalTask = myCBApplication.OpenFunctionalTask(textBox_CBTaskName.Text);
+                   myCBFunctionalTask = myCBApplication.OpenFunctionalTask("cp_laborame");
                }
-               catch (Exception)
+               catch (Exception ex)
                {
                    canIContinue = false;
                    Update_RichTextBox(myColorRed, "SUP", "## ControlBuild: Application mal générée. Impossible de continuer.");
@@ -223,7 +193,7 @@ namespace LbrmPP_SupervisionMultiTB
                     myCBConf = myCBFunctionalTask.OpenEmbeddedConfiguration("conf");
                     myCBInstance = myCBFunctionalTask.RootInstance();
                 }
-                catch(Exception)
+                catch(Exception ex)
                 {
                     canIContinue = false;
                     Update_RichTextBox(myColorRed, "SUP", "## ControlBuild: Application mal générée. Impossible de continuer.");
@@ -289,8 +259,6 @@ namespace LbrmPP_SupervisionMultiTB
 
         private void bgWorkerCB_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            string[] results = (string[])e.UserState;
-            
             switch (e.ProgressPercentage)
             {
                 case 0:
@@ -347,7 +315,7 @@ namespace LbrmPP_SupervisionMultiTB
             Update_RichTextBox(myColorRed, "SUP", "## Fin du Worker.");
             if (e != null && e.Cancelled)
             {
-                startTheWorker(myTB_SUP.Worker);
+                startTheWorker(bgWorkerCB);
                 return;
             }
         }
@@ -361,102 +329,113 @@ namespace LbrmPP_SupervisionMultiTB
 
         private void bgWorkerTCP_Process(object sender, DoWorkEventArgs e)
         {
-            TestBench testBench = (TestBench)e.Argument;
-            //BackgroundWorker bgWorker = (BackgroundWorker)sender;
-            testBench.TCP = new ClassTCP(testBench, this);
-            if (testBench.TCP.Status > 0) 
+            //string strRcv = null;
+            BackgroundWorker bgWorker = (BackgroundWorker)sender;
+            //string[] ParamWorker = (string[]) e.Argument;
+            //string TestBench_IP = ParamWorker[0];
+            //string TestBench_ID = ParamWorker[1];
+            bgWorkerTCP ParamWorker = (bgWorkerTCP)e.Argument;
+
+            TCPPUP = new ClassTCP(bgWorkerTCP_PUP.IP, bgWorkerTCP_PUP.ID, bgWorker, this);
+            if (TCPPUP.Status > 0) 
             {
-                testBench.TCP.InitRP();
-                testBench.TCP.LoadXMLandStart();
+                TCPPUP.InitRP();
+                TCPPUP.LoadXMLandStart();
             }
 
-            while (testBench.TCP.Action < 100)
+            while (TCPPUP.Action<100)
             {
-                //1 = ReConnexion; 2 = Reload XML; 90 = Stop; 100 = Exit the loop
-                switch (testBench.TCP.Action)
+                //1 = ReConnexion
+                //2 = Reload XML
+                //90 = Stop
+                //100 = Exit the loop
+                switch (TCPPUP.Action)
                 {
                     case 1: //1 = ReConnexion
-                        Invoke(new Action(() => { testBench.buttonReconn.Enabled = false; }));
-                        Invoke(new Action(() => { testBench.buttonReload.Enabled = false; }));
-                        Invoke(new Action(() => { testBench.labelConn.ForeColor = myColorOrange; }));
-                        testBench.TCP.Reconnect();
-                        testBench.TCP.Action = 0;
+                        Invoke(new Action(() => { buttonPUPReconn.Enabled = false; }));
+                        Invoke(new Action(() => { buttonPUPReload.Enabled = false; }));
+                        Invoke(new Action(() => { labelPUPConn.ForeColor = myColorOrange; }));
+                        TCPPUP.Reconnect();
+                        TCPPUP.Action = 0;
                         break;
                     case 2: //2 = Reload XML
-                        testBench.TCP.LoadXMLandStart();
-                        testBench.TCP.Action = 0;
+                        TCPPUP.LoadXMLandStart();
+                        TCPPUP.Action = 0;
                         break;
                     default:
-                        testBench.TCP.Action = 0;
+                        TCPPUP.Action = 0;
                         break;
                 }
             }
 
-            if (testBench.TCP.Status > 0)
+            if (TCPPUP.Status > 0)
             {
                 //Thread.Sleep(3000);
-                testBench.TCP.Close();
+                TCPPUP.Close();
             }
         }
 
         private void bgWorkerTCP_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            //Status : 2 = End of Init; 3 = End of HARD.xml; 4 = End of EACB.xml; 5 = End of StartEqt
-            TestBench testBench = (TestBench)e.UserState;
-
+            //Status :
+            //2 = End of Init
+            //3 = End of HARD.xml
+            //4 = End of EACB.xml
+            //5 = End of StartEqt
+            
             switch (e.ProgressPercentage)
             {
                 case 0:
                     break;
                 case 1:
-                    Invoke(new Action(() => { testBench.labelConn.ForeColor = myColorGreen; }));
-                    Invoke(new Action(() => { testBench.labelHard.ForeColor = myColorDefault; }));
-                    Invoke(new Action(() => { testBench.labelEacb.ForeColor = myColorDefault; }));
-                    Invoke(new Action(() => { testBench.labelStartEqt.ForeColor = myColorDefault; }));
-                    Invoke(new Action(() => { testBench.labelgroupBox.ForeColor = myColorDefault; }));
-                    Invoke(new Action(() => { testBench.buttonReconn.Enabled = false; }));
-                    Invoke(new Action(() => { testBench.buttonReload.Enabled = false; }));
-                    Invoke(new Action(() => { testBench.buttonReinit.Enabled = false; }));
+                    Invoke(new Action(() => { labelPUPConn.ForeColor = myColorGreen; }));
+                    Invoke(new Action(() => { labelPUPHard.ForeColor = myColorDefault; }));
+                    Invoke(new Action(() => { labelPUPEacb.ForeColor = myColorDefault; }));
+                    Invoke(new Action(() => { labelPUPStartEqt.ForeColor = myColorDefault; }));
+                    Invoke(new Action(() => { labelgroupBoxPUP.ForeColor = myColorDefault; }));
+                    Invoke(new Action(() => { buttonPUPReconn.Enabled = false; }));
+                    Invoke(new Action(() => { buttonPUPReload.Enabled = false; }));
+                    Invoke(new Action(() => { buttonPUPReinit.Enabled = false; }));
                     break;
                 case -1:
-                    Invoke(new Action(() => { testBench.labelConn.ForeColor = myColorRed; }));
-                    Update_RichTextBox(myColorRed, testBench.ID, "## Probleme de connexion. Vérifier que TB_RP_Server est démarré sur le PC distant (" + testBench.IP + ").");
-                    Update_RichTextBox(myColorRed, testBench.ID, "## Utiliser le bouton 'Reconnexion' pour retenter, puis 'Reload XML'.");
-                    Invoke(new Action(() => { testBench.buttonReconn.Enabled = true; }));
+                    Invoke(new Action(() => { labelPUPConn.ForeColor = myColorRed; }));
+                    Update_RichTextBox(myColorRed, "PUP", "## Probleme de connexion. Vérifier que TB_RP_Server est démarré sur le PC distant.");
+                    Update_RichTextBox(myColorRed, "PUP", "## Utiliser le bouton 'Reconnexion' pour retenter, puis 'Reload XML'.");
+                    Invoke(new Action(() => { buttonPUPReconn.Enabled = true; }));
                     break;
                 case 2 :
-                    Invoke(new Action(() => { testBench.buttonReconn.Enabled = true; }));
-                    Invoke(new Action(() => { testBench.buttonReload.Enabled = true; }));
+                    Invoke(new Action(() => { buttonPUPReconn.Enabled = true; }));
+                    Invoke(new Action(() => { buttonPUPReload.Enabled = true; }));
                     break;
                 case 3:
-                    Invoke(new Action(() => { testBench.labelHard.ForeColor = myColorGreen; }));
+                    Invoke(new Action(() => { labelPUPHard.ForeColor = myColorGreen; }));
                     break;
                 case -3:
-                    Invoke(new Action(() => { testBench.labelHard.ForeColor = myColorRed; }));
+                    Invoke(new Action(() => { labelPUPHard.ForeColor = myColorRed; }));
                     break;
                 case 4:
-                    Invoke(new Action(() => { testBench.labelEacb.ForeColor = myColorGreen; }));
-                    Invoke(new Action(() => { testBench.labelStartEqt.ForeColor = myColorOrange; }));
+                    Invoke(new Action(() => { labelPUPEacb.ForeColor = myColorGreen; }));
+                    Invoke(new Action(() => { labelPUPStartEqt.ForeColor = myColorOrange; }));
                     break;
                 case -4:
-                    Invoke(new Action(() => { testBench.labelEacb.ForeColor = myColorRed; }));
+                    Invoke(new Action(() => { labelPUPEacb.ForeColor = myColorRed; }));
                     break;
                 case 5:
-                    Invoke(new Action(() => { testBench.labelStartEqt.ForeColor = myColorGreen; }));
-                    Invoke(new Action(() => { testBench.buttonReload.Enabled = true; }));
-                    Update_RichTextBox(myColorGreen, testBench.ID, "== Configuration terminée.");
-                    Invoke(new Action(() => { testBench.labelgroupBox.ForeColor = myColorGreen; }));
+                    Invoke(new Action(() => { labelPUPStartEqt.ForeColor = myColorGreen; }));
+                    Invoke(new Action(() => { buttonPUPReload.Enabled = true; }));
+                    Update_RichTextBox(myColorGreen, "PUP", "== Configuration terminée.");
+                    Invoke(new Action(() => { labelgroupBoxPUP.ForeColor = myColorGreen; }));
                     break;
                 case -5:
-                    Invoke(new Action(() => { testBench.labelStartEqt.ForeColor = myColorRed; }));
-                    Invoke(new Action(() => { testBench.buttonReload.Enabled = true; }));
+                    Invoke(new Action(() => { labelPUPStartEqt.ForeColor = myColorRed; }));
+                    Invoke(new Action(() => { buttonPUPReload.Enabled = true; }));
                     break;
                 default:
                     break;
             }
             if (e.ProgressPercentage < 0)
             {
-                if (testBench.labelgroupBox.ForeColor != myColorRed) testBench.labelgroupBox.ForeColor = myColorRed;
+                if (labelgroupBoxPUP.ForeColor != myColorRed) labelgroupBoxPUP.ForeColor = myColorRed;
             }
         
         }
@@ -472,7 +451,7 @@ namespace LbrmPP_SupervisionMultiTB
             {
                 // Next, handle the case where the user canceled the operation. 
                 // Note that due to a race condition in the DoWork event handler, the Cancelled flag may not have been set, even though CancelAsync was called.
-                MessageBox.Show("bgWorkerTCP Canceled");
+                MessageBox.Show("bgWorkerTCP_PUP Canceled");
             }
             else
             {
@@ -480,18 +459,18 @@ namespace LbrmPP_SupervisionMultiTB
                 // succeeded.
                 MessageBox.Show(e.Result.ToString());;
             }
-            //Update_RichTextBox(myColorOrange, "PUP", "##  Fin du Worker TCPPUP ##");
+            Update_RichTextBox(myColorOrange, "PUP", "##  Fin du Worker TCPPUP ##");
         }
         #endregion
 
         private void buttonPUPReconn_Click(object sender, EventArgs e)
         {
-            myTB_PUP.TCP.Action = 1;
+            TCPPUP.Action = 1;
         }
 
         private void buttonPUPReload_Click(object sender, EventArgs e)
         {
-            myTB_PUP.TCP.Action = 2;
+            TCPPUP.Action = 2;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -502,7 +481,7 @@ namespace LbrmPP_SupervisionMultiTB
         {
             Invoke(new Action(() => { btnSUPReInit.Enabled = false; })); 
             bgWorkerCB_Action = 99;
-            myTB_SUP.Worker.CancelAsync();
+            bgWorkerCB.CancelAsync();
         }
 
         private void startTheWorker(BackgroundWorker worker)
